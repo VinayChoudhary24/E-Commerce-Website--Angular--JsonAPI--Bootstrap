@@ -1,7 +1,11 @@
 # Getting Started 
 
 1-- Go to the Directory and open CMD, Check for Node, Npm, Angular Versions, Run -ng new project-name, Open VS code with command -code . and Run -ng serve.
-2-- Clean Everything from app.component.html
+2-- Setup git Repo.
+3-- Clean Everything from app.component.html.
+
+# Building the NavBar[Header Component]
+
 
 # ECommerceWebsite
 
