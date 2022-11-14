@@ -1,0 +1,37 @@
+/* This is the Seller Form */
+.seller__form {
+    text-align: center;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    width: 500px;
+}
+
+.seller__form > h1 {
+    margin-top: 100px;
+    font-weight: 500;
+    color: rgb(59, 146, 59);
+}
+
+/* This Input Fields */
+.form__input {
+    height: 35px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    border: 2px solid lightgrey;
+    border-radius: 10px;
+}
+
+/* This will show the Input fields border red if they are Invalid and Touched */
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched { 
+    border: 1px solid red; 
+}
+
+/* This is SignUp Button */
+.form__button {
+    border-radius: 2px;
+    border: 2px solid darkgray;
+    height: 35px;
+    padding: 5px;
+    cursor: pointer;
+}

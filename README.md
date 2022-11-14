@@ -6,6 +6,8 @@
 
 # Building the NavBar[Header Component]
 
+# Building the Home Component
+
 
 # ECommerceWebsite
 

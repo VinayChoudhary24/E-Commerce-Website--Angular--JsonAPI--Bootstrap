@@ -1,0 +1,61 @@
+<div class="seller__auth">
+    <!-- This will make an Account for the Seller -->
+    <div class="signup__container">
+
+        <!-- This is the Seller Form  -->
+        <!-- #sellerSignUpForm is name to be used in the .ts file -->
+        <!-- ngSubmit is the Event to Submit the Form -->
+        <form 
+        class="seller__form" 
+        #sellerSignUpForm="ngForm" 
+        (ngSubmit)="onSubmit(sellerSignUpForm.value)">
+
+        <h1>START SELLING YOUR PRODUCTS</h1>
+
+            <!-- Seller's Name -->
+            <!-- <label for="name">Enter Name</label><br> -->
+            <!-- ngModel Connects the Form with the TS file -->
+            <input 
+            class="form__input"
+            type="text"
+            id="name" 
+            placeholder="Enter Name"
+            ngModel
+            name="name"
+            required
+            />
+
+            <!-- Seller's Email -->
+            <!-- <label for="email">Email</label><br> -->
+            <input 
+            class="form__input"
+            type="email"
+            id="email" 
+            placeholder="Enter Email"
+            ngModel
+            name="email"
+            required
+            email
+            />
+
+            <!-- Seller's Password -->
+            <!-- <label for="password">Password</label><br> -->
+            <input 
+            class="form__input"
+            type="password"
+            id="password" 
+            placeholder="Enter Password"
+            ngModel
+            name="password"
+            required
+            minlength="6"
+            />
+
+            <button 
+            class="form__button"
+            type="submit" 
+            [disabled]="!sellerSignUpForm.valid">Sign-Up</button>
+
+        </form>
+    </div>
+</div>

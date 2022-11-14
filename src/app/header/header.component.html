@@ -1,21 +1,41 @@
 <!-- For Header we Use NAV Tag -->
-<nav>
+<nav class="nav">
     <!-- Left Part of the Header -- Website Name -->
-    <h1>Madani.in</h1>
+    <!-- <h1>Madani.in</h1> -->
+    <header>Madani.in</header>
 
     <!-- Middle Part of the Header -- Search Input and Button -->
-    <div>
+    <div class="nav__search">
         <input 
+        class="nav__searchInput"
         type="text" 
         placeholder="Search" />
-        <button>Search</button>
+        <button class="nav__searchButton">Search</button>
     </div>
 
     <!-- Right Side of the Header -->
-    <ul>
-        <a href="#"><span className="header__optionLineOne">Hello Guest</span><br>
-            <span className="header__optionLineTwo">Sign In</span></a>
-        <a href="#"><span className="header__optionLineOne"></span>Seller</a>
-        <a></a>
-    </ul>
+    <div class="nav__options">
+
+        <div class="nav__optionsRight">
+            <a href="#" id="line">
+                <span class="nav__optionsLineOne">Hello Guest</span><br>
+                <span class="nav__optionsLineTwo">Sign In</span>
+            </a>
+        </div>
+        <div class="nav__optionsRight">
+            <!-- Use RouterLink to route to path 'seller-auth' -->
+            <a routerLink="/seller-auth" id="line">
+                <span class="nav__optionsLineOne">Sell On</span><br>
+                <span class="nav__optionsLineTwo">Madani</span>
+            </a>
+        </div>
+        <div class="nav__optionsBasket">
+            <!-- BASKET ICON -->
+            <a href="#" id="line">
+                <span class="nav__optionsLineTwo">Cart</span>
+                <!-- <span className="header__optionLineTwo">{Cart.length}</span> -->
+            </a>
+        </div>
+        
+    </div>
 </nav>
