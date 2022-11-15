@@ -8,6 +8,10 @@
 
 # Building the Home Component
 
+# Routing
+
+# Setup JSON Server -- For Fake API --run Command npm install -g json-server
+
 
 # ECommerceWebsite
 
