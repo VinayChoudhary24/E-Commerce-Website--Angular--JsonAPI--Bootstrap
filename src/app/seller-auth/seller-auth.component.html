@@ -1,6 +1,6 @@
 <div class="seller__auth">
     <!-- This will make an Account for the Seller -->
-    <div class="signup__container">
+    <div class="signup__container" *ngIf="switchMode">
 
         <!-- This is the Seller Form  -->
         <!-- #sellerSignUpForm is name to be used in the .ts file -->
@@ -8,7 +8,7 @@
         <form 
         class="seller__form" 
         #sellerSignUpForm="ngForm" 
-        (ngSubmit)="onSubmit(sellerSignUpForm.value)">
+        (ngSubmit)="onSignUp(sellerSignUpForm.value)">
 
         <h1>START SELLING YOUR PRODUCTS</h1>
 
@@ -54,8 +54,64 @@
             <button 
             class="form__button"
             type="submit" 
-            [disabled]="!sellerSignUpForm.valid">Sign-Up</button>
+            [disabled]="!sellerSignUpForm.valid">Create your Account</button>
 
+            <!-- Display the Error Message -->
+            <h3 style="color: red; font-family: Arial, Helvetica, sans-serif;" *ngIf="!sellerSignUpForm">{{ sellerErrorMessage }}</h3>
+
+            <!-- To Toggle Between Sign-Up and Sign-In -->
+            <button 
+            class="redirect__button"
+            (click)="redirectToSignIn()">Already have an account? Click to Sign In</button>
+
+        </form>
+    </div>
+
+    <!-- Signin Conatiner -->
+    <div class="signin__container" *ngIf="!switchMode">
+        <!-- signIn Form -->
+        <form 
+        class="seller__signinForm" 
+        #sellerSignInForm="ngForm" 
+        (ngSubmit)="onSignIn(sellerSignInForm.value)">
+            <!-- Email Field -->
+            <input 
+            class="form__input" 
+            placeholder="Email"
+            type="email"
+            id="email"
+            ngModel 
+            name="email"
+            required 
+            email />
+
+            <!-- Password Field -->
+            <input 
+            class="form__input" 
+            placeholder="Password"
+            type="password"
+            id="password" 
+            ngModel 
+            name="password"
+            required 
+            minlength="6" />
+            
+            <button 
+            class="signin__button" 
+            type="submit">Sign In</button>
+
+            <!-- To Display the Error -->
+            <h2 style="color: red; font-family: Arial, Helvetica, sans-serif;">{{ sellerErrorMessage }}</h2>
+
+            <p style="color: rgb(134, 30, 50);">
+                By signing-in you agree to Madani.in Conditions of Use & Sale. Please see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice. 
+            </p>
+
+            <!-- To Toggle Between Sign-Ip and Sign-Un -->
+            <h2>Don't have an account?</h2>
+            <button 
+            class="redirect__button"
+            (click)="redirectToSignUp()">Sign Up</button>
         </form>
     </div>
 </div>

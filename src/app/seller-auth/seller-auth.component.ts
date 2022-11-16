@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SellerRequestData } from '../data-type';
+import { SellerSignIpRequestData, SellerSignUpRequestData } from '../data-type';
 import { SellerService } from '../seller-services/seller.service';
 
 @Component({
@@ -9,6 +9,12 @@ import { SellerService } from '../seller-services/seller.service';
   styleUrls: ['./seller-auth.component.css']
 })
 export class SellerAuthComponent implements OnInit {
+
+  // Switch from SignUp to SignIn
+  switchMode = false;
+
+  // To show the Error Message to the User
+  sellerErrorMessage = '';
 
   // /Inject the SellerService Here to use all the Fuctions from the service
   constructor( private sellerService: SellerService,
@@ -21,38 +27,42 @@ export class SellerAuthComponent implements OnInit {
       }
   
 
-  // This will Submit the Form
-  onSubmit( data: SellerRequestData ) {
-    // console.log(form);
-
-    // Checking the Validation 
-    // if(!form.valid) {
-    //   return;
-    // }
-    // Store the data 
-    // const name = form.value.name;
-    // const email = form.value.email;
-    // const password = form.value.password;
-
-    // To store the SignUp Request
-    // let sellerObs: Observable<SellerResponseData>;
+  // This will Submit the Form when Clicked Sign-Up
+  onSignUp( data: SellerSignUpRequestData ) {
+    // console.log(data);
 
     // Calling the HttpRequest Method from the SellerService
     this.sellerService.sellerSignUp(data);
-    // Subscribe the Http Requets
-    // .subscribe( (resdata) => {
-    //   console.log(resdata);
-    //   if(resdata) {
-    //     this.router.navigate(['/seller-home']);
-    //   }
-    // });
+    this.sellerService.sellerError.subscribe( (error) => {
+      if(error) {
+        this.sellerErrorMessage = "An error occured!"
+      }
+    })
+  }
 
-    // Subscribe the SignUp POST Request
-    // sellerObs.subscribe( (resdata) => {
-    //   console.log(resdata);
-    //   this.router.navigate([''])
-    // })
-    
+  // This will Redirect from SignUp to SignIn Page
+  redirectToSignIn() {
+    this.switchMode = false;
+  }
+
+  // This will Redirect from SignIn to SignUp
+  redirectToSignUp() {
+    this.switchMode = true;
+  }
+
+  // This will submit the Form when Clicked SignIn
+  onSignIn( data: SellerSignIpRequestData ) {
+    // console.log(data);
+    this.sellerErrorMessage = "";
+
+    // Calling the HttpRequest Method from the SellerService
+    this.sellerService.sellerSignIn(data);
+    this.sellerService.sellerError.subscribe( (error) => {
+      if(error) {
+        this.sellerErrorMessage = "An error occured!"
+      }
+    })
+
   }
   
 }  

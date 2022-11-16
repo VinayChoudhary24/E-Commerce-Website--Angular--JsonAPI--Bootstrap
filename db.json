@@ -17,6 +17,36 @@
       "email": "test@test.com",
       "password": "123456",
       "id": 3
+    },
+    {
+      "name": "Vinay",
+      "email": "test@test.com",
+      "password": "123123123123",
+      "id": 4
+    },
+    {
+      "name": "Vinay",
+      "email": "test@test.c",
+      "password": "123213123",
+      "id": 5
+    },
+    {
+      "name": "Vinay",
+      "email": "test@test.co",
+      "password": "123121",
+      "id": 6
+    },
+    {
+      "name": "Vinay",
+      "email": "test@test.c",
+      "password": "1223344",
+      "id": 7
+    },
+    {
+      "name": "Vinay",
+      "email": "test2@test.com",
+      "password": "123456",
+      "id": 8
     }
   ]
 }

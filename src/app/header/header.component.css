@@ -4,20 +4,29 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #E7E08B;
+    background-color: #bbb14a;
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
 /* Name of the Application */
-.nav > header {
+/* .nav > header {
     width: 100px;
     color: #31332E;
-    margin: 0 20px;
+    margin-left: 10px;
     font-size: larger;
     object-fit: contain;
-    /* margin-top: 18px; */
+    margin-top: 18px;
+} */
+#homelink {
+    width: 100px;
+    color: #31332E;
+    margin-left: 10px;
+    font-size: larger;
+    object-fit: contain;
+    color: #31332E;
+    text-decoration: none;
 }
 
 /* The Middle Part i.e SearchInput and Button/Icon */
@@ -30,29 +39,36 @@
 
 /* This is the Input Field */
 .nav__searchInput {
-    height: 12px;
-    padding: 10px;
     border: none;
+    border-radius: 7px;
     width: 90%;
-    border-radius: 5px;
+    height: 15px;
+    padding: 10px;
+    outline-width: 0;
+    font-size: large;
 }
 
 /* The Search Button */
 .nav__searchButton {
     padding: 5px;
     height: 34px;
-    width: 60px;
-    font-size: 14px;
+    width: 70px;
+    font-size: large;
     border: none;
     background-color: #cd9042;
     border-radius: 5px;
     color: #2D2E2A;
+    cursor: pointer;
+}
+.nav__searchButton:hover {
+    border: 1px solid darkgray;
 }
 
 /* The Right Side of the header i.e headerOptions */
 .nav__options {
+    width: 300px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     /* border: 1px solid red; */
     margin-left: 15px;
     margin-right: 25px;
@@ -87,5 +103,15 @@
     align-items: center;
 }
 
+/* The Header Options for the Seller After Sign In */
+/* The Right Side of the header i.e headerOptions */
+.nav__signInOptions {
+    width: 400px;
+    display: flex;
+    justify-content: space-evenly;
+    /* border: 1px solid red; */
+    /* margin-left: 15px; */
+    margin-right: 25px;
+}
 
 

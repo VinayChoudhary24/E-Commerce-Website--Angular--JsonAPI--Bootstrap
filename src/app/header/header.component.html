@@ -2,10 +2,12 @@
 <nav class="nav">
     <!-- Left Part of the Header -- Website Name -->
     <!-- <h1>Madani.in</h1> -->
-    <header>Madani.in</header>
+    <!-- Add link to route Home when Clicked -->
+    <a id="homelink" routerLink="/"><header>Madani.in</header></a>
 
     <!-- Middle Part of the Header -- Search Input and Button -->
-    <div class="nav__search">
+    <!-- Use *ngIf to Hide the Search Bar when in Seller-home page -->
+    <div *ngIf="sellerType === 'default'" class="nav__search">
         <input 
         class="nav__searchInput"
         type="text" 
@@ -14,7 +16,11 @@
     </div>
 
     <!-- Right Side of the Header -->
-    <div class="nav__options">
+    <!-- Use Switch Statement to Hide Different Options According to the Seller, User, Home -->
+    <div [ngSwitch]="sellerType">
+        <div
+    class="nav__options" 
+    *ngSwitchCase="'default'">
 
         <div class="nav__optionsRight">
             <a href="#" id="line">
@@ -35,7 +41,35 @@
                 <span class="nav__optionsLineTwo">Cart</span>
                 <!-- <span className="header__optionLineTwo">{Cart.length}</span> -->
             </a>
+            </div>
         </div>
-        
+
+        <!-- This is the Header Options After the Seller is Sign In i.e NAVBAR/HEADER -->
+        <div
+    class="nav__signInOptions" 
+    *ngSwitchCase="'seller'">
+
+        <div class="nav__optionsRight">
+            <a style="cursor: pointer;" (click)="sellerSignOut()" id="line">
+                <span class="nav__optionsLineOne">Hello, {{ sellerName | titlecase }}</span><br>
+                <span class="nav__optionsLineTwo">Sign Out</span>
+            </a>
+        </div>
+        <div class="nav__optionsRight">
+            <!-- Use RouterLink to route to path 'seller-auth' -->
+            <a routerLink="/seller-add-product" id="line">
+                <span class="nav__optionsLineOne">Add</span><br>
+                <span class="nav__optionsLineTwo">Products</span>
+            </a>
+        </div>
+        <div class="nav__optionsBasket">
+            <!-- BASKET ICON -->
+            <a routerLink="/seller-home" id="line">
+                <span class="nav__optionsLineTwo">Your Listings</span>
+                <!-- <span className="header__optionLineTwo">{Cart.length}</span> -->
+            </a>
+            </div>
+        </div>
     </div>
+    
 </nav>
