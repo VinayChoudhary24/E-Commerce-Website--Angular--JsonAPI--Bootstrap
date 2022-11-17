@@ -74,7 +74,10 @@ export class SellerService {
 
   }
 
+
+
   // Calling the ngOnInit from the seller-auth.component
+  // This will Make sure the User is SignIn After the Page is Refreshed
   reloadSeller() {
     if(localStorage.getItem('sellerData')) {
       this.isSellerSignUp.next(true);

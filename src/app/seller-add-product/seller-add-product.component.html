@@ -1,1 +1,67 @@
-<p>seller-add-product works!</p>
+<div class="product__container">
+    
+    <h3>Add New Products</h3>
+    <form class="product__form" 
+    #addNewProduct="ngForm"
+    (ngSubmit)="onAddProduct(addNewProduct.value)">
+
+    <!-- Product Name -->
+    <input
+    class="product__input" 
+    type="text" 
+    placeholder="Product Name" 
+    ngModel
+    name="productName"
+    required />
+
+    <!-- Product Category -->
+    <input
+    class="product__input" 
+    type="text" 
+    placeholder="Product Category" 
+    ngModel
+    name="productCategory"
+    required />
+
+    <!-- Product Image -->
+    <input 
+    type="text"
+    placeholder="Product Image URL"
+    #imagePreview
+    ngModel
+    name="productImage"
+    required />
+
+    <!-- Image Preview -->
+    <!-- <img 
+    [src]="imagePreview.value"
+    alt="productImage"
+    class="product__imagePreview" /> -->
+
+    <!-- product Price -->
+    <input
+    class="product__input" 
+    type="text" 
+    placeholder="Product Price" 
+    ngModel
+    name="productPrice"
+    required />
+
+    <!-- Product Details -->
+    <!-- For Details we Use textarea Field not Input Field -->
+    <textarea 
+    class="product__textArea"
+    type="text" 
+    placeholder="Product Details" 
+    ngModel
+    name="productDetails"
+    required ></textarea>
+
+    <!-- Button to Submit Product -->
+    <button class="product__button">Add Product</button>
+
+    <!-- This will Display the Message To the User -->
+    <h3 *ngIf="addNewProduct.valid">{{ productAddedMessage }}</h3>
+
+    </form>
+</div>

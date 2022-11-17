@@ -1,0 +1,4 @@
+/* This will show the Input fields border red if they are Invalid and Touched */
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched { 
+    border: 1px solid red; 
+}
