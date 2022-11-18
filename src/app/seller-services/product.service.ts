@@ -35,4 +35,9 @@ export class ProductService {
     return this.http.put(`http://localhost:3000/products/${updatedProduct.id}`, updatedProduct)
   }
 
+  // This API will Call the Products that we want to Display in the carousel i.e app-home
+  // ?_limit = , this is the number of products we want to Get/Display in the Carousel
+  carouselProducts() {
+    return this.http.get<sellerAddNewProductData[]>('http://localhost:3000/products?_limit=2')
+  }
 }

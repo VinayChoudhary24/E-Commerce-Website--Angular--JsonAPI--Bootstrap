@@ -29,7 +29,7 @@
   *-v6 -solid
 
 # install BootStrap for Carousel
-  *npm uninstall @schematics/angular
+  *npm config set legacy-peer-deps true
   *ng add @ng-bootstrap/ng-bootstrap 
 
 

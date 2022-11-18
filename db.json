@@ -57,6 +57,14 @@
       "productPrice": "153,000/-",
       "productDetails": "Best Phone Ever!!!",
       "id": 6
+    },
+    {
+      "productName": "Oneplus 10t",
+      "productCategory": "Mobile Phones",
+      "productImage": "https://www.reliancedigital.in/medias/OnePlus-10-Pro-Smartphone-492849808-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w3MjA2MnxpbWFnZS9qcGVnfGltYWdlcy9oOWYvaGU5Lzk4NzAyNzMzNDc2MTQuanBnfGQxYTUyZTY5N2IyZjk5MjM5ZmY2NTFiNGE1MGY5ZDg2ZDQyNTdkODI4MWUwOGI2Nzg4N2Y1ZTlhMGM3NjM3MjU",
+      "productPrice": "97,000/-",
+      "productDetails": "Best Phone at a Good Price!!",
+      "id": 8
     }
   ]
 }

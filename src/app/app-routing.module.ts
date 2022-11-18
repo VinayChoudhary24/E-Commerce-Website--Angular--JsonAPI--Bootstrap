@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 import { SellerAddProductComponent } from './seller-add-product/seller-add-product.component';
 import { SellerAuthGuard } from './seller-auth.guard';
 import { SellerAuthComponent } from './seller-auth/seller-auth.component';
@@ -28,7 +29,10 @@ const routes: Routes = [
   { path: 'seller-update-product/:id', component: SellerUpdateProductComponent,
   // Add AuthGuard so that the User Cannot re-direct to other pages after SignUp
   canActivate: [SellerAuthGuard]
-  }
+  },
+
+  // Load the HomePage of the Application when Clicked The  Madani.in TEXT
+  { path: 'app-home', component: HomeComponent }, 
 
   // Load Error Component
   // { path: '**', component: PageNotFoundComponent }

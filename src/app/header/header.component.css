@@ -42,7 +42,7 @@
     border: none;
     border-radius: 7px;
     width: 90%;
-    height: 15px;
+    height: 30px;
     padding: 10px;
     outline-width: 0;
     font-size: large;
@@ -51,7 +51,10 @@
 /* The Search Button */
 .nav__searchButton {
     padding: 5px;
-    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
     width: 70px;
     font-size: large;
     border: none;

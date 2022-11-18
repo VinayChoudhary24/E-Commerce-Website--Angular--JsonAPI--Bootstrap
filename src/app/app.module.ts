@@ -10,7 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { SellerHomeComponent } from './seller-home/seller-home.component';
 import { SellerAddProductComponent } from './seller-add-product/seller-add-product.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { SellerUpdateProductComponent } from './seller-update-product/seller-update-product.component'
+import { SellerUpdateProductComponent } from './seller-update-product/seller-update-product.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HomeComponent } from './home/home.component'
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { SellerUpdateProductComponent } from './seller-update-product/seller-upd
     SellerHomeComponent,
     SellerAddProductComponent,
     SellerUpdateProductComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +34,7 @@ import { SellerUpdateProductComponent } from './seller-update-product/seller-upd
     // For HTTP Requests all over the Application
     HttpClientModule,
      FontAwesomeModule,
+     NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
