@@ -51,11 +51,11 @@
   ],
   "products": [
     {
-      "productName": "iPhone 14",
+      "productName": "iPhone 14 Pro",
       "productCategory": "Mobile Phones",
       "productImage": "https://d2xamzlzrdbdbn.cloudfront.net/products/cba3931e-2326-43e2-88ce-296d45a6632e22081150_416x416.jpg",
-      "productPrice": "123,000/-",
-      "productDetails": "Best Ever!!!",
+      "productPrice": "153,000/-",
+      "productDetails": "Best Phone Ever!!!",
       "id": 6
     }
   ]

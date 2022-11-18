@@ -25,4 +25,14 @@ export class ProductService {
     return this.http.delete(`http://localhost:3000/products/${id}`)
   }
 
+  // Method to get the Product Details from API
+  getProductDeatils( id: string ) {
+    return this.http.get<sellerAddNewProductData>(`http://localhost:3000/products/${id}`)
+  }
+
+  // Method to Update the Product Details After SAVE CHANGES CLICKED
+  updateProductDetails( updatedProduct: sellerAddNewProductData ) {
+    return this.http.put(`http://localhost:3000/products/${updatedProduct.id}`, updatedProduct)
+  }
+
 }

@@ -23,7 +23,14 @@
                 <td>{{ product.productCategory }}</td>
                 <td>{{ product.productPrice }}</td>
                 <td>{{ product.productDetails }}</td>
-                <td><button (click)="productDelete(product.id)">Delete</button></td>
+                
+                <!-- To use theDeleteIcon and UpdateIcon we need to Bind it to icon property -->
+                <td>
+                    <!-- We Pass the ID here to get the Specific Product -->
+                    <a class="product__options" routerLink="/seller-update-product/{{ product.id }}"><fa-icon [icon]="updateIcon"></fa-icon></a>
+                    <fa-icon [icon]="deleteIcon" (click)="productDelete(product.id)"></fa-icon>
+                </td>
+                
             </tr>
         </tbody>
     </table>

@@ -1,0 +1,59 @@
+<div class="product__container">
+    
+    <h3>Edit Product</h3>
+    <form class="product__form" 
+    #updateProduct="ngForm"
+    (ngSubmit)="onSaveChanges(updateProduct.value)">
+
+    <!-- Product Name -->
+    <input
+    class="product__input" 
+    type="text"  
+    ngModel = "{{ productData?.productName }}"
+    name="productName" />
+
+    <!-- Product Category -->
+    <input
+    class="product__input" 
+    type="text"  
+    ngModel = "{{ productData?.productCategory }}"
+    name="productCategory" />
+
+    <!-- Product Image -->
+    <input 
+    type="text"
+    #imagePreview
+    ngModel = "{{ productData?.productImage }}"
+    name="productImage" />
+
+    <!-- Image Preview -->
+    <!-- <img 
+    [src]="imagePreview.value"
+    alt="productImage"
+    class="product__imagePreview" /> -->
+
+    <!-- product Price -->
+    <input
+    class="product__input" 
+    type="text" 
+    placeholder="Product Price" 
+    ngModel = "{{ productData?.productPrice }}"
+    name="productPrice" />
+
+    <!-- Product Details -->
+    <!-- For Details we Use textarea Field not Input Field -->
+    <textarea 
+    class="product__textArea"
+    type="text" 
+    ngModel = "{{ productData?.productDetails }}"
+    name="productDetails" ></textarea>
+
+    <!-- Button to Submit Product -->
+    <button class="product__button">Save Changes</button>
+
+    <!-- This will Display the Message To the User -->
+    <h3 *ngIf="updateProduct.valid">{{ productUpdatedMessage }}</h3>
+
+    </form>
+</div>
+

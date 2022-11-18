@@ -5,14 +5,36 @@
 3-- Clean Everything from app.component.html.
 
 # Building the NavBar[Header Component]
+  *Make a Component -- ng g c ....
+  *Make Routing
 
 # Building the Home Component
-
+  *Make a Component -- ng g c ....
+  *Make Routing
 # Routing
 
 # Setup JSON Server -- For Fake API --run Command npm install -g json-server
+   * to run JSON database  run command-- json-server --watch db.json
+
+# Building Seller Add Product
+  *Make a Component -- ng g c ....
+  *Make Routing
+
+# Building Seller-Update-Product
+  *Make a Component -- ng g c ....
+  *Make Routing
+
+# Install FontAwesome for Icons 
+  *ng add @fortawesome/angular-fontawesome 
+  *-v6 -solid
+
+# install BootStrap for Carousel
+  *npm uninstall @schematics/angular
+  *ng add @ng-bootstrap/ng-bootstrap 
 
 
+
+************
 # ECommerceWebsite
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.

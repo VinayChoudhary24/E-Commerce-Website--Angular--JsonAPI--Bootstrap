@@ -1,12 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+// Import the cart Shopping Icon
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
+  // The Cart Icon
+  cartIcon = faCartShopping;
 
   // To Check the Type of theseller
   sellerType: string = "default";

@@ -2,12 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { sellerAddNewProductData } from '../data-type';
 import { ProductService } from '../seller-services/product.service';
 
+// Import Fa to use the Icons for any Component
+import { faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-seller-home',
   templateUrl: './seller-home.component.html',
   styleUrls: ['./seller-home.component.css']
 })
 export class SellerHomeComponent implements OnInit {
+
+  // Icon for Delete Button
+  deleteIcon = faTrash;
+
+  // Icon for Update product
+  updateIcon = faPenToSquare;
 
   // To Display the ProductsList on the Page
   productsList: undefined | sellerAddNewProductData[];
