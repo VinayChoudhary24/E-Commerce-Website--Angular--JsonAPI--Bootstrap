@@ -6,8 +6,32 @@
 			<img class="carousel__images" src="{{ product.productImage }}" alt="Random first slide" />
 		</div>
 		<div class="carousel-caption">
-			<h3>First slide label</h3>
-			<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+			<h3>{{ product.productName }}</h3>
+			<p>{{ product.productDetails }}</p>
 		</div>
 	</ng-template>
 </ngb-carousel>
+
+<!-- This will show the product List -->
+<div class="productlist__container">
+	<h1>Top Selling products</h1>
+
+	<!-- To add New Content -->
+	<div class="row">
+		<!-- The area Each product Covers -->
+		<div class="col-sm-3">
+			<div class="product__item">
+				<img src="https://d2xamzlzrdbdbn.cloudfront.net/products/cba3931e-2326-43e2-88ce-296d45a6632e22081150_416x416.jpg" alt="" />
+			</div>
+			<div class="product__details">
+				<h5 class="product__name">Product 1</h5>
+				<div class="product__priceColor">Price: blue</div>
+			</div>
+
+			<div class="product__footer">
+				<a href="#">View Details</a>
+				<a href="#">Add to Cart</a>
+			</div>
+		</div>
+	</div>
+</div>

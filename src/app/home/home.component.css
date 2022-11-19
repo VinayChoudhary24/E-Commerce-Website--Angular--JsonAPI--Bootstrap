@@ -1,4 +1,21 @@
+.picsum-img-wrapper {
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
+}
+
 .carousel__images {
-    height: 300px;
-    width: 300px;
+    object-fit: contain;
+    height: 400px;
+    width: 400px;
+}
+
+.carousel-caption {
+    color: brown;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    color: black;
+    background-color: black;
+    border: 5px solid black;
 }
