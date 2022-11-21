@@ -3,16 +3,26 @@
     <!-- Left Part of the Header -- Website Name -->
     <!-- <h1>Madani.in</h1> -->
     <!-- Add link to route Home when Clicked -->
-    <a id="homelink" routerLink="/app-home"><header>Madani.in</header></a>
+    <a id="homelink" routerLink="/"><header>Madani.in</header></a>
 
     <!-- Middle Part of the Header -- Search Input and Button -->
     <!-- Use *ngIf to Hide the Search Bar when in Seller-home page -->
     <div *ngIf="sellerType === 'default'" class="nav__search">
-        <input 
+        <input
+        #searchInput
+        (keyup)="searchedProduct($event)"
+        (blur)="hideSearch()"
         class="nav__searchInput"
         type="text" 
         placeholder="Search Products" />
-        <button class="nav__searchButton">Search</button>
+        <button routerLink="/search/:query" class="nav__searchButton" (click)="onSearch(searchInput.value)">Search</button>
+
+        <!-- This will Display the Searched Product on the Page -->
+        <ul class="search__Result" *ngIf="searchResult">
+            <li *ngFor="let product of searchResult">
+                <a>{{ product.productName }}</a>
+            </li>
+        </ul>
     </div>
 
     <!-- Right Side of the Header -->

@@ -1,0 +1,22 @@
+.footer__container {
+    /* border: 1px solid red; */
+    display: flex;
+    padding: 10px;
+    justify-content: space-evenly;
+}
+
+.footer__container a{
+    text-decoration: none;
+    color: firebrick;
+}
+
+.footer__copyright {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer__copyright a{
+    text-decoration: none;
+    color: firebrick;
+}

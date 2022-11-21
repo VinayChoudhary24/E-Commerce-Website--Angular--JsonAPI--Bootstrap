@@ -117,4 +117,26 @@
     margin-right: 25px;
 }
 
+/* <!-- This will Display the Searched Product on the Page --> */
+.search__Result {
+    position: absolute;
+    display: list-item !important; 
+    z-index: 10;
+    /* background-color: whitesmoke; */
+    width: 400px;
+    top: 45.5px;
+    list-style: none;
+}
 
+/* Searched products List */
+.search__Result li {
+    border: 1px solid lightgrey;
+    padding: 5px;
+    background-color: whitesmoke;
+}
+
+.search__Result li a{
+    cursor: pointer;
+    text-decoration: none;
+    color: #bbb14a;
+}

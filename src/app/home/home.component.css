@@ -1,21 +1,58 @@
+/* This Contains the Image of the Carousel */
 .picsum-img-wrapper {
     object-fit: contain;
     display: flex;
     justify-content: center;
 }
 
+/* This is the Image */
 .carousel__images {
     object-fit: contain;
     height: 400px;
     width: 400px;
 }
 
+/* This is  the Carousel Caption i.e  ProductName and Details */
 .carousel-caption {
     color: brown;
 }
 
+/* These Are the Carousel Arrows i.e Left, Right Navigation */
 .carousel-control-prev-icon, .carousel-control-next-icon {
     color: black;
     background-color: black;
     border: 5px solid black;
+}
+
+/* This is the Container for the Product List */
+.productlist__container {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    margin: 20px;
+}
+
+/* picture of the Listed Product */
+.product__pictures {
+    width: 100%;
+    border: 2px solid lightgrey;
+}
+.product__picture {
+    object-fit: contain;
+    text-align: center;
+    width: 100%;
+    height: 200px;
+}
+
+/* PRoducts Details */
+.product__details {
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    padding: 10px;
+}
+
+/* Footer */
+.product__footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
 }

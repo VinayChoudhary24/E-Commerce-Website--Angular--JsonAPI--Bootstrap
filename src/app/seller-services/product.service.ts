@@ -40,4 +40,15 @@ export class ProductService {
   carouselProducts() {
     return this.http.get<sellerAddNewProductData[]>('http://localhost:3000/products?_limit=2')
   }
+
+  // This API will call all the Products from Products List to the HomePage i.e Top Selling Products
+  getTopSellingProducts() {
+    return this.http.get<sellerAddNewProductData[]>('http://localhost:3000/products?_limit=10')
+  }
+
+  // This API will call the products when Searched from the SEARCH AREA
+  getSearchedProducts(query: string) {
+    return this.http.get<sellerAddNewProductData[]>(`http://localhost:3000/products?q=${query}`)
+  }
+
 }

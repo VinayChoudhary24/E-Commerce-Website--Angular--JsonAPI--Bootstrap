@@ -16,22 +16,24 @@
 <div class="productlist__container">
 	<h1>Top Selling products</h1>
 
-	<!-- To add New Content -->
+	<!-- Display the Product List in Home Page -->
 	<div class="row">
 		<!-- The area Each product Covers -->
-		<div class="col-sm-3">
-			<div class="product__item">
-				<img src="https://d2xamzlzrdbdbn.cloudfront.net/products/cba3931e-2326-43e2-88ce-296d45a6632e22081150_416x416.jpg" alt="" />
-			</div>
+		<div class="col-sm-3" *ngFor="let topProduct of topSellingproducts">
+			<div class="product__pictures">
+				<img class="product__picture" src="{{ topProduct.productImage }}" alt="" />
+			
 			<div class="product__details">
-				<h5 class="product__name">Product 1</h5>
-				<div class="product__priceColor">Price: blue</div>
+				<h5 class="product__name">{{ topProduct.productName }}</h5>
+				<div class="product__priceColor">Price: {{ topProduct.productPrice }}</div>
+				<div class="product__priceColor">{{ topProduct.productDetails }}</div>
 			</div>
 
-			<div class="product__footer">
+			  <div class="product__footer">
 				<a href="#">View Details</a>
 				<a href="#">Add to Cart</a>
-			</div>
-		</div>
-	</div>
+			  </div>
+		    </div>
+	    </div>
+	</div>	
 </div>

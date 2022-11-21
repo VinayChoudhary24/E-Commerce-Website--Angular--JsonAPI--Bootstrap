@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { SearchComponent } from './search/search.component';
 import { SellerAddProductComponent } from './seller-add-product/seller-add-product.component';
 import { SellerAuthGuard } from './seller-auth.guard';
 import { SellerAuthComponent } from './seller-auth/seller-auth.component';
@@ -9,6 +10,12 @@ import { SellerUpdateProductComponent } from './seller-update-product/seller-upd
 
 // This Array Contains all the Routes Required
 const routes: Routes = [
+
+  // Load the HomePage of the Application when Clicked The  Madani.in TEXT
+  { path: '', component: HomeComponent,
+  // Add AuthGuard so that the User Cannot re-direct to other pages after SignUp 
+  canActivate: [SellerAuthGuard] },
+
   // this Routes to the Seller Component
   { path: 'seller-auth', component: SellerAuthComponent },
 
@@ -30,9 +37,12 @@ const routes: Routes = [
   // Add AuthGuard so that the User Cannot re-direct to other pages after SignUp
   canActivate: [SellerAuthGuard]
   },
-
-  // Load the HomePage of the Application when Clicked The  Madani.in TEXT
-  { path: 'app-home', component: HomeComponent }, 
+  
+  // Load the SearchPage whe nClicked on Search Button
+  { path: 'search/:query', component: SearchComponent,
+  // Add AuthGuard so that the User Cannot re-direct to other pages after SignUp 
+  // canActivate: [SellerAuthGuard] 
+}
 
   // Load Error Component
   // { path: '**', component: PageNotFoundComponent }
