@@ -1,3 +1,9 @@
+.footer {
+    width: 100%;
+    bottom: 1px;
+    border-top: 2px solid darkgrey;
+}
+
 .footer__container {
     /* border: 1px solid red; */
     display: flex;

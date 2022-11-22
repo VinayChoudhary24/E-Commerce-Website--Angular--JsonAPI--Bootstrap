@@ -3,7 +3,13 @@
     <!-- Use ngFor to Loop the Images -->
 	<ng-template *ngFor="let product of carouselImages" ngbSlide>
 		<div class="picsum-img-wrapper">
-			<img class="carousel__images" src="{{ product.productImage }}" alt="Random first slide" />
+			<!-- RouterLink will redirect to ProductDetails -->
+			<a routerLink="/details/{{ product.id }}">
+				<img 
+				class="carousel__images" 
+				src="{{ product.productImage }}" 
+				alt="Random first slide" />
+			</a>
 		</div>
 		<div class="carousel-caption">
 			<h3>{{ product.productName }}</h3>
@@ -30,8 +36,8 @@
 			</div>
 
 			  <div class="product__footer">
-				<a href="#">View Details</a>
-				<a href="#">Add to Cart</a>
+				<a routerLink="/details/{{ topProduct.id }}">View Details</a>
+				<a routerLink="/details/{{ topProduct.id }}">Add to Cart</a>
 			  </div>
 		    </div>
 	    </div>

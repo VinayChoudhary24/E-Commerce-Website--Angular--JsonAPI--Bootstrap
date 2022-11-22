@@ -51,4 +51,6 @@ export class ProductService {
     return this.http.get<sellerAddNewProductData[]>(`http://localhost:3000/products?q=${query}`)
   }
 
+  // 
+
 }

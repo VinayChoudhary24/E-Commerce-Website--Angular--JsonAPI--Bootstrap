@@ -66,11 +66,11 @@ export class HeaderComponent implements OnInit {
   searchedProduct(search: KeyboardEvent) {
     if(search) {
       const element = search.target as HTMLInputElement;
-      console.log(element.value);
+      // console.log(element.value);
 
       // We will pass the element.value to the API
       this.productService.getSearchedProducts(element.value).subscribe( (resdata) => {
-        console.log({resdata});
+        // console.log({resdata});
 
         // Limit the Searched Products SHOW Length i.e Only Five Products will be Shown when Searched Something
         if(resdata.length > 5) {
@@ -93,7 +93,12 @@ export class HeaderComponent implements OnInit {
     console.log({val});
 
     // Route the Searched Product to searchComponent from Here
-    this.router.navigate([`/search${val}`]);
+    this.router.navigate([`/search/${val}`]);
+  }
+
+  // This function will redirect to the DetailsPage
+  redirectToDetails(id: number) {
+    this.router.navigate(['/details/' +id])
   }
 
 }

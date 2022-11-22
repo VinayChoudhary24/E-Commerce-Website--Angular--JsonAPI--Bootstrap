@@ -22,3 +22,12 @@ export interface sellerAddNewProductData {
   productImage: string;
   id: number;
 }
+
+// *************************
+
+// This is for the User SignUp
+export interface UserSignUpRequestData {
+  name: string; 
+  email: string; 
+  password: string;
+}

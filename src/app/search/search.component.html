@@ -1,1 +1,16 @@
-<p>search works!</p>
+<!-- BootStrap Class -->
+<div class="row search-item" *ngFor="let product of searchResult">
+    <div class="col-sm-3">
+        <a routerLink="/details/{{ product.id }}">
+        <img 
+        src="{{ product.productImage }}" 
+        alt="" />
+        </a>
+    </div>
+    <div class="col-sm-8 details">
+        <a routerLink="/details/{{ product.id }}"><h5>{{ product.productName }}</h5></a>
+        <p><b>Price: {{ product.productPrice }}</b></p>
+        <p>Category: {{ product.productCategory }}</p>
+        <p>Details: {{ product.productDetails }}</p>
+    </div>
+</div>

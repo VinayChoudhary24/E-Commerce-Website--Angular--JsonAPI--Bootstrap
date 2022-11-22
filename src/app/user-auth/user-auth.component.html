@@ -1,0 +1,49 @@
+<div class="user__container">
+    <h2>Sign-up</h2>
+    <form class="user__signUpForm" 
+    #userSignUp="ngForm" 
+    (ngSubmit)="onUserSignUp(userSignUp.value)">
+
+    <input 
+    class="form__input"
+    type="text"
+    id="name" 
+    placeholder="Enter Name"
+    ngModel
+    name="name"
+    required
+            />
+
+    <!-- Email Field -->
+    <input 
+    class="form__input" 
+    placeholder="Enter your email"
+    type="email"
+    id="email"
+    ngModel 
+    name="email"
+    required 
+    email />
+
+    <!-- Password Field -->
+    <input 
+    class="form__input" 
+    placeholder="Password"
+    type="password"
+    id="password" 
+    ngModel 
+    name="password"
+    required 
+    minlength="6" />
+
+    <button 
+            class="signup__button" 
+            type="submit">Sign Up</button>
+            
+    <!-- To Toggle Between Sign-Up and Sign-In -->
+    <button 
+    class="redirect__button"
+    >Already have an account? Click to Sign In</button>        
+
+    </form>
+</div>

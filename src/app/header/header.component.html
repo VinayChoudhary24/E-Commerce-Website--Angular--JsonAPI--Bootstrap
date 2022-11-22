@@ -15,12 +15,13 @@
         class="nav__searchInput"
         type="text" 
         placeholder="Search Products" />
-        <button routerLink="/search/:query" class="nav__searchButton" (click)="onSearch(searchInput.value)">Search</button>
+        <button class="nav__searchButton" (click)="onSearch(searchInput.value)">Search</button>
 
         <!-- This will Display the Searched Product on the Page -->
         <ul class="search__Result" *ngIf="searchResult">
             <li *ngFor="let product of searchResult">
-                <a>{{ product.productName }}</a>
+                <!-- Add Mouse event to redirect to product Details Page because of (blur) event above, routerLink and (click) will not work Here-->
+                <a (mousedown)="redirectToDetails(product.id)">{{ product.productName }}</a>
             </li>
         </ul>
     </div>
@@ -33,7 +34,7 @@
     *ngSwitchCase="'default'">
 
         <div class="nav__optionsRight">
-            <a href="#" id="line">
+            <a routerLink="/user-auth" id="line">
                 <span class="nav__optionsLineOne">Hello Guest</span><br>
                 <span class="nav__optionsLineTwo">Sign In</span>
             </a>

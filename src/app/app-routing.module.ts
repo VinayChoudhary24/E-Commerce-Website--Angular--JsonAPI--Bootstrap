@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 import { SearchComponent } from './search/search.component';
 import { SellerAddProductComponent } from './seller-add-product/seller-add-product.component';
 import { SellerAuthGuard } from './seller-auth.guard';
 import { SellerAuthComponent } from './seller-auth/seller-auth.component';
 import { SellerHomeComponent } from './seller-home/seller-home.component';
 import { SellerUpdateProductComponent } from './seller-update-product/seller-update-product.component';
+import { UserAuthComponent } from './user-auth/user-auth.component';
 
 // This Array Contains all the Routes Required
 const routes: Routes = [
@@ -41,8 +43,14 @@ const routes: Routes = [
   // Load the SearchPage whe nClicked on Search Button
   { path: 'search/:query', component: SearchComponent,
   // Add AuthGuard so that the User Cannot re-direct to other pages after SignUp 
-  // canActivate: [SellerAuthGuard] 
-}
+  canActivate: [SellerAuthGuard] 
+},
+
+// Load the ProductDetails when Clicked on View Details
+{ path: 'details/:productId', component: ProductDetailsComponent },
+
+// Load the user SignUp/SignIn Page when clicked on Hello guest 
+{ path: 'user-auth', component: UserAuthComponent },
 
   // Load Error Component
   // { path: '**', component: PageNotFoundComponent }
