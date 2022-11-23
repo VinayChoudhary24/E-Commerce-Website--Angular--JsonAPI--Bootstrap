@@ -28,10 +28,10 @@ export class SellerAuthComponent implements OnInit {
   
 
   // This will Submit the Form when Clicked Sign-Up
-  onSignUp( data: SellerSignUpRequestData ) {
+  onSellerSignUp( data: SellerSignUpRequestData ) {
     // console.log(data);
 
-    // Calling the HttpRequest Method from the SellerService
+    // Calling the HttpRequest Method from the SellerService i.e sellerSignUp
     this.sellerService.sellerSignUp(data);
     this.sellerService.sellerError.subscribe( (error) => {
       if(error) {
@@ -51,7 +51,7 @@ export class SellerAuthComponent implements OnInit {
   }
 
   // This will submit the Form when Clicked SignIn
-  onSignIn( data: SellerSignIpRequestData ) {
+  onSellerSignIn( data: SellerSignIpRequestData ) {
     // console.log(data);
     this.sellerErrorMessage = "";
 

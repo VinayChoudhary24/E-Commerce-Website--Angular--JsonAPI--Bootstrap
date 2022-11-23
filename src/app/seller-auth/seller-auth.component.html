@@ -8,7 +8,7 @@
         <form 
         class="seller__form" 
         #sellerSignUpForm="ngForm" 
-        (ngSubmit)="onSignUp(sellerSignUpForm.value)">
+        (ngSubmit)="onSellerSignUp(sellerSignUpForm.value)">
 
         <h1>START SELLING YOUR PRODUCTS</h1>
 
@@ -35,7 +35,6 @@
             ngModel
             name="email"
             required
-            email
             />
 
             <!-- Seller's Password -->
@@ -73,7 +72,7 @@
         <form 
         class="seller__signinForm" 
         #sellerSignInForm="ngForm" 
-        (ngSubmit)="onSignIn(sellerSignInForm.value)">
+        (ngSubmit)="onSellerSignIn(sellerSignInForm.value)">
             <!-- Email Field -->
             <input 
             class="form__input" 
@@ -83,7 +82,7 @@
             ngModel 
             name="email"
             required 
-            email />
+            />
 
             <!-- Password Field -->
             <input 

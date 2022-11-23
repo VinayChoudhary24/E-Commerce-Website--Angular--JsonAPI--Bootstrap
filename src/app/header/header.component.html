@@ -6,8 +6,8 @@
     <a id="homelink" routerLink="/"><header>Madani.in</header></a>
 
     <!-- Middle Part of the Header -- Search Input and Button -->
-    <!-- Use *ngIf to Hide the Search Bar when in Seller-home page -->
-    <div *ngIf="sellerType === 'default'" class="nav__search">
+    <!-- Use *ngIf to show the search Bar when in userMode and defaultMode, but Hide the Search Bar when in Seller-home page -->
+    <div *ngIf="switchMode === 'user' || 'defualt'" class="nav__search">
         <input
         #searchInput
         (keyup)="searchedProduct($event)"
@@ -28,7 +28,7 @@
 
     <!-- Right Side of the Header -->
     <!-- Use Switch Statement to Hide Different Options According to the Seller, User, Home -->
-    <div [ngSwitch]="sellerType">
+    <div [ngSwitch]="switchMode">
         <div
     class="nav__options" 
     *ngSwitchCase="'default'">
@@ -55,6 +55,35 @@
             </a>
             </div>
         </div>
+
+        <!-- This is for the User after User Sign-up or Sign-In -->
+        <div
+    class="nav__options" 
+    *ngSwitchCase="'user'">
+
+        <div class="nav__optionsRight">
+            <a style="cursor: pointer;" id="line" (click)="userSignOut()">
+                <span class="nav__optionsLineOne">Hello {{ userName | titlecase }}</span><br>
+                <span class="nav__optionsLineTwo">Sign Out</span>
+            </a>
+        </div>
+        <div class="nav__optionsRight">
+            <!-- Use RouterLink to route to path 'orders' -->
+            <a routerLink="/returns-orders" id="line">
+                <span class="nav__optionsLineOne">Returns</span><br>
+                <span class="nav__optionsLineTwo">& Orders</span>
+            </a>
+        </div>
+        <div class="nav__optionsBasket">
+            <!-- BASKET ICON -->
+            <a href="#" id="line">
+                <!-- The Cart ICON -->
+                <span class="nav__optionsLineTwo"><fa-icon [icon]="cartIcon"></fa-icon></span>
+                <!-- <span className="header__optionLineTwo">{Cart.length}</span> -->
+            </a>
+            </div>
+        </div>
+
 
         <!-- This is the Header Options After the Seller is Sign In i.e NAVBAR/HEADER -->
         <div

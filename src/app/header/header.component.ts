@@ -17,11 +17,12 @@ export class HeaderComponent implements OnInit {
   // The Cart Icon
   cartIcon = faCartShopping;
 
-  // To Check the Type of theseller
-  sellerType: string = "default";
+  // To Check the Type i.e seller and User
+  switchMode: string = "default";
 
-  // To get the Seller Name
+  // To get the Seller and User Name
   sellerName: string = '';
+  userName: string = '';
 
   // To Display the Searched product
   searchResult: undefined | sellerAddNewProductData[];
@@ -34,22 +35,26 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
 
     this.router.events.subscribe( (value: any) => {
-      console.log(value.url);
+      // console.log(value.url);
       // this will change the Header for Sign In Seller
       if(value.url) {
-        if(localStorage.getItem('sellerData') && value.url.includes('seller')) {
-          console.log("in seller home")
-          this.sellerType = "seller";
-
-          // To Display the Name of the User
-          if(localStorage.getItem('sellerData')) {
+        if(localStorage.getItem('sellerData')) {
+          // console.log("in seller home")
+          // To Display the Name of the Seller
             let sellerNameStore = localStorage.getItem('sellerData');
             let sellerStoredData = sellerNameStore && JSON.parse(sellerNameStore)[0];
             this.sellerName = sellerStoredData.name;
-          }
-        }else {
-          console.log("outside Seller Area")
-          this.sellerType = "default"
+            this.switchMode = 'seller';
+
+          // To check for the UserData and Display the Name of the User
+        }else if(localStorage.getItem('userData')) {
+            let userNameStore = localStorage.getItem('userData');
+            let userStoredData = userNameStore && JSON.parse(userNameStore)[0];
+            this.userName = userStoredData.name;
+            this.switchMode = 'user';
+        } else {
+          // console.log("outside Seller Area")
+          this.switchMode = 'default';
         }
       }
     })
@@ -59,6 +64,14 @@ export class HeaderComponent implements OnInit {
   sellerSignOut() {
     localStorage.removeItem('sellerData');
     this.router.navigate(['/']);
+    this.switchMode = 'default';
+  }
+
+  // This will SignOut the User
+  userSignOut() {
+    localStorage.removeItem('userData');
+    this.router.navigate(['/']);
+    this.switchMode = 'default';
   }
 
   // Call the searchedProduct Event on the Search Input Field

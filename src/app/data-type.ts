@@ -31,3 +31,9 @@ export interface UserSignUpRequestData {
   email: string; 
   password: string;
 }
+
+// This is for the User Sign-In --UserService
+export interface UserSignInRequestData {
+  email: string;
+  password: string;
+}

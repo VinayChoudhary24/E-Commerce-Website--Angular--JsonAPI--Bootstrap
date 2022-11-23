@@ -16,7 +16,8 @@ import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-import { UserAuthComponent } from './user-auth/user-auth.component'
+import { UserAuthComponent } from './user-auth/user-auth.component';
+import { UserReturnsAndOrdersComponent } from './user-returns-and-orders/user-returns-and-orders.component'
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { UserAuthComponent } from './user-auth/user-auth.component'
     FooterComponent,
     ProductDetailsComponent,
     UserAuthComponent,
+    UserReturnsAndOrdersComponent,
   ],
   imports: [
     BrowserModule,

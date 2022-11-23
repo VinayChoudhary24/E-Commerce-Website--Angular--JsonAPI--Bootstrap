@@ -1,49 +1,98 @@
-<div class="user__container">
-    <h2>Sign-up</h2>
-    <form class="user__signUpForm" 
-    #userSignUp="ngForm" 
-    (ngSubmit)="onUserSignUp(userSignUp.value)">
+<div>
+        <div class="user__container" *ngIf="switchMode">
+                <h2>Sign-up</h2>
+                <form class="user__signUpForm" 
+                #userSignUp="ngForm" 
+                (ngSubmit)="onUserSignUp(userSignUp.value)">
+            
+                <input 
+                class="form__input"
+                type="text"
+                id="name" 
+                placeholder="Enter Name"
+                ngModel
+                name="name"
+                required
+                        />
+            
+                <!-- Email Field -->
+                <input 
+                class="form__input" 
+                placeholder="Enter your email"
+                type="email"
+                id="email"
+                ngModel 
+                name="email"
+                required 
+                />
+            
+                <!-- Password Field -->
+                <input 
+                class="form__input" 
+                placeholder="Password"
+                type="password"
+                id="password" 
+                ngModel 
+                name="password"
+                required 
+                minlength="6" />
+            
+                <button 
+                        class="signup__button">Sign Up</button>
+                        
+                <!-- To Toggle Between Sign-Up and Sign-In -->
+                <button 
+                class="redirect__button"
+                (click)="redirectToSignIn()">Already have an account? Click to Sign In</button>        
+            
+            </form>
+        </div>
 
-    <input 
-    class="form__input"
-    type="text"
-    id="name" 
-    placeholder="Enter Name"
-    ngModel
-    name="name"
-    required
+        <!-- Signin Conatiner -->
+    <div class="signin__container" *ngIf="!switchMode">
+        <!-- signIn Form -->
+        <form 
+        class="user__signinForm" 
+        #userSignInForm="ngForm" 
+        (ngSubmit)="onUserSignIn(userSignInForm.value)">
+            <!-- Email Field -->
+            <input 
+            class="form__input" 
+            placeholder="Email"
+            type="email"
+            id="email"
+            ngModel 
+            name="email"
+            required 
             />
 
-    <!-- Email Field -->
-    <input 
-    class="form__input" 
-    placeholder="Enter your email"
-    type="email"
-    id="email"
-    ngModel 
-    name="email"
-    required 
-    email />
-
-    <!-- Password Field -->
-    <input 
-    class="form__input" 
-    placeholder="Password"
-    type="password"
-    id="password" 
-    ngModel 
-    name="password"
-    required 
-    minlength="6" />
-
-    <button 
-            class="signup__button" 
-            type="submit">Sign Up</button>
+            <!-- Password Field -->
+            <input 
+            class="form__input" 
+            placeholder="Password"
+            type="password"
+            id="password" 
+            ngModel 
+            name="password"
+            required 
+            minlength="6" />
             
-    <!-- To Toggle Between Sign-Up and Sign-In -->
-    <button 
-    class="redirect__button"
-    >Already have an account? Click to Sign In</button>        
+            <button 
+            class="signin__button" 
+            type="submit">Sign In</button>
 
-    </form>
+            <!-- To Display the Error -->
+            <!-- <h2 style="color: red; font-family: Arial, Helvetica, sans-serif;">{{ sellerErrorMessage }}</h2> -->
+
+            <p style="color: rgb(134, 30, 50);">
+                By signing-in you agree to Madani.in Conditions of Use & Sale. Please see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice. 
+            </p>
+
+            <!-- To Toggle Between Sign-Ip and Sign-Un -->
+            <h2>Don't have an account?</h2>
+            <button 
+            class="redirect__button"
+            (click)="redirectToSignUp()">Sign Up</button>
+        </form>
+    </div>
 </div>

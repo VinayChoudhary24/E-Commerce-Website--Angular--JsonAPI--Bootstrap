@@ -5,48 +5,6 @@
       "email": "test@test.com",
       "password": "123456",
       "id": 1
-    },
-    {
-      "name": "Vinay",
-      "email": "test@test.com",
-      "password": "123456",
-      "id": 2
-    },
-    {
-      "name": "Vinay",
-      "email": "test@test.com",
-      "password": "123456",
-      "id": 3
-    },
-    {
-      "name": "Vinay",
-      "email": "test@test.com",
-      "password": "123123123123",
-      "id": 4
-    },
-    {
-      "name": "Vinay",
-      "email": "test@test.c",
-      "password": "123213123",
-      "id": 5
-    },
-    {
-      "name": "Vinay",
-      "email": "test@test.co",
-      "password": "123121",
-      "id": 6
-    },
-    {
-      "name": "Vinay",
-      "email": "test@test.c",
-      "password": "1223344",
-      "id": 7
-    },
-    {
-      "name": "Vinay",
-      "email": "test2@test.com",
-      "password": "123456",
-      "id": 8
     }
   ],
   "products": [
@@ -97,6 +55,122 @@
       "productPrice": "150,000/-",
       "productDetails": "Best phone!!",
       "id": 12
+    }
+  ],
+  "users": [
+    {
+      "name": "Vinay",
+      "email": "test@test.com",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "name": "Vinay",
+      "email": "test@test.com",
+      "password": "123456",
+      "id": 2
+    },
+    {
+      "name": "Bread",
+      "email": "bread@test.com",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "name": "Vinay",
+      "email": "test12@test.com",
+      "password": "123456",
+      "id": 4
+    },
+    {
+      "name": "Vinay",
+      "email": "test12@test.com",
+      "password": "123456",
+      "id": 5
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 6
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 7
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 8
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 9
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 10
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 11
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 12
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 13
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 14
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 15
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 16
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 17
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 18
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 19
     }
   ]
 }

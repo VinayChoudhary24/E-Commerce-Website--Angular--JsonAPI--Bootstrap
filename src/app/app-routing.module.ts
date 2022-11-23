@@ -9,6 +9,7 @@ import { SellerAuthComponent } from './seller-auth/seller-auth.component';
 import { SellerHomeComponent } from './seller-home/seller-home.component';
 import { SellerUpdateProductComponent } from './seller-update-product/seller-update-product.component';
 import { UserAuthComponent } from './user-auth/user-auth.component';
+import { UserReturnsAndOrdersComponent } from './user-returns-and-orders/user-returns-and-orders.component';
 
 // This Array Contains all the Routes Required
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   // Load the HomePage of the Application when Clicked The  Madani.in TEXT
   { path: '', component: HomeComponent,
   // Add AuthGuard so that the User Cannot re-direct to other pages after SignUp 
-  canActivate: [SellerAuthGuard] },
+  // canActivate: [SellerAuthGuard] 
+},
 
   // this Routes to the Seller Component
   { path: 'seller-auth', component: SellerAuthComponent },
@@ -43,14 +45,25 @@ const routes: Routes = [
   // Load the SearchPage whe nClicked on Search Button
   { path: 'search/:query', component: SearchComponent,
   // Add AuthGuard so that the User Cannot re-direct to other pages after SignUp 
-  canActivate: [SellerAuthGuard] 
+  // canActivate: [SellerAuthGuard] 
 },
 
 // Load the ProductDetails when Clicked on View Details
-{ path: 'details/:productId', component: ProductDetailsComponent },
+{ path: 'details/:productId', component: ProductDetailsComponent, 
+// Add AuthGuard so that the User Cannot re-direct to other pages after SignUp 
+// canActivate: [SellerAuthGuard]
+},
 
 // Load the user SignUp/SignIn Page when clicked on Hello guest 
-{ path: 'user-auth', component: UserAuthComponent },
+{ path: 'user-auth', component: UserAuthComponent, 
+// Add AuthGuard so that the User Cannot re-direct to other pages after SignUp 
+// canActivate: [SellerAuthGuard]
+},
+
+{ path: 'returns-orders', component: UserReturnsAndOrdersComponent, 
+// Add AuthGuard so that the User Cannot re-direct to other pages after SignUp 
+// canActivate: [SellerAuthGuard]
+}
 
   // Load Error Component
   // { path: '**', component: PageNotFoundComponent }
