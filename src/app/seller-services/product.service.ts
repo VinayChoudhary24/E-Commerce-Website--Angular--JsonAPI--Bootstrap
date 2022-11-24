@@ -38,7 +38,7 @@ export class ProductService {
   // This API will Call the Products that we want to Display in the carousel i.e app-home
   // ?_limit = , this is the number of products we want to Get/Display in the Carousel
   carouselProducts() {
-    return this.http.get<sellerAddNewProductData[]>('http://localhost:3000/products?_limit=2')
+    return this.http.get<sellerAddNewProductData[]>('http://localhost:3000/products?_limit=5')
   }
 
   // This API will call all the Products from Products List to the HomePage i.e Top Selling Products

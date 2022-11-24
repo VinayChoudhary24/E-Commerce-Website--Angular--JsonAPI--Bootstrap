@@ -2,3 +2,48 @@
 input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched { 
     border: 1px solid red; 
 }
+
+/* This is the Main Container */
+.product__container {
+    /* border: 1px solid red; */
+    /* height: 460px; */
+    display: flex;
+    justify-content: space-around;
+}
+
+/* This is the Form */
+.product__form {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.product__input {
+    height: 35px;
+}
+.product__textArea {
+    height: 80px;
+}
+.product__button {
+    border: 1px solid;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: #e6c153;
+    padding: 4px;
+    font-size: large;
+}
+
+/* This Contains the Image */
+.image__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-responsive {
+    margin: 5px;
+    height: 450px;
+    width: 600px;
+}

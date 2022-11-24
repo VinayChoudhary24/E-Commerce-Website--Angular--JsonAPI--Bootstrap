@@ -1,3 +1,11 @@
+/* This Contains the SignIn */
+.signup__container {
+    margin-bottom: 100px;
+    /* border: 1px solid red; */
+    height: 400px;
+}
+
+
 /* This is the Seller Form for SignUp */
 .seller__form {
     text-align: center;

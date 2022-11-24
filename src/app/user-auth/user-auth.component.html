@@ -1,6 +1,6 @@
 <div>
         <div class="user__container" *ngIf="switchMode">
-                <h2>Sign-up</h2>
+                <h2 style="color: #5D5179;">Create your Account</h2>
                 <form class="user__signUpForm" 
                 #userSignUp="ngForm" 
                 (ngSubmit)="onUserSignUp(userSignUp.value)">
@@ -38,7 +38,7 @@
                 minlength="6" />
             
                 <button 
-                        class="signup__button">Sign Up</button>
+                class="signup__button">Sign Up</button>
                         
                 <!-- To Toggle Between Sign-Up and Sign-In -->
                 <button 
@@ -84,7 +84,7 @@
             <!-- To Display the Error -->
             <!-- <h2 style="color: red; font-family: Arial, Helvetica, sans-serif;">{{ sellerErrorMessage }}</h2> -->
 
-            <p style="color: rgb(134, 30, 50);">
+            <p style="color: rgb(134, 30, 50);font-size: large;">
                 By signing-in you agree to Madani.in Conditions of Use & Sale. Please see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice. 
             </p>
 

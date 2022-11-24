@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #bbb14a;
+    background-color: #CA831B;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -21,11 +21,11 @@
 } */
 #homelink {
     width: 100px;
-    color: #31332E;
+    color: #33312E;
     margin-left: 10px;
     font-size: larger;
+    font-weight: 500;
     object-fit: contain;
-    color: #31332E;
     text-decoration: none;
 }
 
@@ -40,8 +40,8 @@
 /* This is the Input Field */
 .nav__searchInput {
     border: none;
-    border-radius: 7px;
-    width: 90%;
+    border-radius: 8px;
+    width: 80%;
     height: 30px;
     padding: 10px;
     outline-width: 0;
@@ -58,8 +58,8 @@
     width: 70px;
     font-size: large;
     border: none;
-    background-color: #cd9042;
     border-radius: 5px;
+    background-color: #e6c153;
     color: #2D2E2A;
     cursor: pointer;
 }

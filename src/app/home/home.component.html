@@ -2,25 +2,25 @@
 <ngb-carousel *ngIf="carouselImages">
     <!-- Use ngFor to Loop the Images -->
 	<ng-template *ngFor="let product of carouselImages" ngbSlide>
-		<div class="picsum-img-wrapper">
-			<!-- RouterLink will redirect to ProductDetails -->
-			<a routerLink="/details/{{ product.id }}">
-				<img 
-				class="carousel__images" 
-				src="{{ product.productImage }}" 
-				alt="Random first slide" />
-			</a>
-		</div>
-		<div class="carousel-caption">
-			<h3>{{ product.productName }}</h3>
-			<p>{{ product.productDetails }}</p>
-		</div>
+			<div class="picsum-img-wrapper">
+				<!-- RouterLink will redirect to ProductDetails -->
+				<a routerLink="/details/{{ product.id }}">
+					<img 
+					class="carousel__images" 
+					src="{{ product.productImage }}" 
+					alt="Random first slide" />
+				</a>
+			</div>
+			<div class="carousel-caption">
+				<h1>{{ product.productName }}</h1>
+				<!-- <p>{{ product.productDetails }}</p> -->
+			</div>
 	</ng-template>
 </ngb-carousel>
 
 <!-- This will show the product List -->
 <div class="productlist__container">
-	<h1>Top Selling products</h1>
+	<h1 class="top__products">Top Selling products</h1>
 
 	<!-- Display the Product List in Home Page -->
 	<div class="row">
@@ -31,8 +31,8 @@
 			
 			<div class="product__details">
 				<h5 class="product__name">{{ topProduct.productName }}</h5>
-				<div class="product__priceColor">Price: {{ topProduct.productPrice }}</div>
-				<div class="product__priceColor">{{ topProduct.productDetails }}</div>
+				<div class="product__price">Price: {{ topProduct.productPrice }}</div>
+				<!-- <div class="product__priceColor">{{ topProduct.productDetails }}</div> -->
 			</div>
 
 			  <div class="product__footer">

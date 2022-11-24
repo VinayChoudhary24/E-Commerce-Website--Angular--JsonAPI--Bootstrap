@@ -9,168 +9,52 @@
   ],
   "products": [
     {
-      "productName": "iPhone 14 Pro",
+      "productName": "GOOGLE PIXEL 7 PRO",
       "productCategory": "Mobile Phones",
-      "productImage": "https://d2xamzlzrdbdbn.cloudfront.net/products/cba3931e-2326-43e2-88ce-296d45a6632e22081150_416x416.jpg",
-      "productPrice": "153,000/-",
-      "productDetails": "Best Phone Ever!!!",
-      "id": 6
+      "productImage": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pixel-7-main-image-1666188282.png",
+      "productPrice": "42,999/-",
+      "productDetails": "THE GOOGLE PIXEL 7 PRO GETS THE PREMIUM TREATMENT WITH A SHARPER CURVED EDGE DISPLAY, MORE CAMERAS AND BIGGER BATTERY.",
+      "id": 1
     },
     {
-      "productName": "Oneplus 10t",
+      "productName": "MOTOROLA EDGE 30 FUSION",
       "productCategory": "Mobile Phones",
-      "productImage": "https://www.reliancedigital.in/medias/OnePlus-10-Pro-Smartphone-492849808-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w3MjA2MnxpbWFnZS9qcGVnfGltYWdlcy9oOWYvaGU5Lzk4NzAyNzMzNDc2MTQuanBnfGQxYTUyZTY5N2IyZjk5MjM5ZmY2NTFiNGE1MGY5ZDg2ZDQyNTdkODI4MWUwOGI2Nzg4N2Y1ZTlhMGM3NjM3MjU",
+      "productImage": "https://gizchina.it/wp-content/uploads/2022/09/Moto-edge-30-ultra-edge-30-neo-edge-30-fusion.jpg",
       "productPrice": "97,000/-",
-      "productDetails": "Best Phone at a Good Price!!",
-      "id": 8
+      "productDetails": "THE MOTOROLA 30 FUSION AIMS TO STRIKE THE RIGHT BALANCE BY OFFERING FLAGSHIP-GRADE HARDWARE WRAPPED INSIDE A PREMIUM BODY.",
+      "id": 2
     },
     {
-      "productName": "iPhone 14 Pro",
+      "productName": "IPHONE 14 PRO ",
       "productCategory": "Mobile Phones",
-      "productImage": "https://d2xamzlzrdbdbn.cloudfront.net/products/cba3931e-2326-43e2-88ce-296d45a6632e22081150_416x416.jpg",
-      "productPrice": "123,000/-",
-      "productDetails": "Best Phone Ever!!",
-      "id": 9
+      "productImage": "https://9to5mac.com/wp-content/uploads/sites/6/2022/09/iPhone-14-wallpapers.jpg?quality=82&strip=all",
+      "productPrice": "1,29,900/-",
+      "productDetails": "THE IPHONE 14 PRO INTRODUCES A NEW DYNAMIC ISLAND AREA INSTEAD OF A NOTCH< AN UPGRADED 48-MEGAPIXEL PRIMARY CAMERA, AND AN ALWAYS-ON DISPLAY.",
+      "id": 3
     },
     {
-      "productName": "iPhone 14 Pro",
+      "productName": "SAMSUNG GALAXY Z FOLD 4",
       "productCategory": "Mobile Phones",
-      "productImage": "https://d2xamzlzrdbdbn.cloudfront.net/products/cba3931e-2326-43e2-88ce-296d45a6632e22081150_416x416.jpg",
-      "productPrice": "123,000/-",
-      "productDetails": "Best Phone Ever!!",
-      "id": 10
+      "productImage": "https://www.sammobile.com/wp-content/uploads/2021/08/Galaxy-Z-Fold-3-16.jpg",
+      "productPrice": "1,54,999/-",
+      "productDetails": "THE PHONE COMES WITH A 7.60-INCH TOUCHSCREEN PRIMARY DISPLAY OFFERING A RESOLUTION OF 2176x1812 PIXELS. IT ALSO FEATURES A 6.20-INCH TOUCHSCREEN AS A SECOND DISPLAY, WITH A RESOLUTION OF 904x2316.",
+      "id": 4
     },
     {
-      "productName": "iPhone 14",
+      "productName": "ONEPLUS 10 PRO",
       "productCategory": "Mobile Phones",
-      "productImage": "https://d2xamzlzrdbdbn.cloudfront.net/products/cba3931e-2326-43e2-88ce-296d45a6632e22081150_416x416.jpg",
-      "productPrice": "150,000/-",
-      "productDetails": "Best phone!!",
-      "id": 11
-    },
-    {
-      "productName": "iPhone 14",
-      "productCategory": "Mobile Phones",
-      "productImage": "https://d2xamzlzrdbdbn.cloudfront.net/products/cba3931e-2326-43e2-88ce-296d45a6632e22081150_416x416.jpg",
-      "productPrice": "150,000/-",
-      "productDetails": "Best phone!!",
-      "id": 12
+      "productImage": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/OnePlus_10_Ultra_Untitled.png",
+      "productPrice": "60,999/-",
+      "productDetails": "ONEPLUS 10 PRO OFFERS A BIGGER BATTERY WITH QUICKER CHARGING, A SLIGHTLY MORE POWER-EFFICIENT AMOLED DISPLAY, A MORE POWERFUL SoC WITH PLENTY MORE 5G BANDS, A BETTER SELFIE CAMERA, A NICER DESIGN.",
+      "id": 5
     }
   ],
   "users": [
     {
       "name": "Vinay",
-      "email": "test@test.com",
+      "email": "test12@test.com",
       "password": "123456",
       "id": 1
-    },
-    {
-      "name": "Vinay",
-      "email": "test@test.com",
-      "password": "123456",
-      "id": 2
-    },
-    {
-      "name": "Bread",
-      "email": "bread@test.com",
-      "password": "123456",
-      "id": 3
-    },
-    {
-      "name": "Vinay",
-      "email": "test12@test.com",
-      "password": "123456",
-      "id": 4
-    },
-    {
-      "name": "Vinay",
-      "email": "test12@test.com",
-      "password": "123456",
-      "id": 5
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 6
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 7
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 8
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 9
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 10
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 11
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 12
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 13
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 14
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 15
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 16
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 17
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 18
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 19
     }
   ]
 }

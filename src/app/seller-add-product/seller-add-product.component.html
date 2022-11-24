@@ -1,6 +1,7 @@
+<!-- Heading -->
+<h3 style="text-align: center; color: #2D2E2A;">Add New Products</h3>
+
 <div class="product__container">
-    
-    <h3>Add New Products</h3>
     <form class="product__form" 
     #addNewProduct="ngForm"
     (ngSubmit)="onAddProduct(addNewProduct.value)">
@@ -25,9 +26,10 @@
 
     <!-- Product Image -->
     <input 
+    class="product__input"
     type="text"
     placeholder="Product Image URL"
-    #imagePreview
+    #productImage
     ngModel
     name="productImage"
     required />
@@ -64,4 +66,14 @@
     <h3 *ngIf="addNewProduct.valid">{{ productAddedMessage }}</h3>
 
     </form>
+
+    <!-- Image Container -->
+    <div class="row image__container" *ngIf="productImage.value">
+        <div class="col-xs-12">
+            <img 
+            [src]="productImage.value"
+            alt="Product Image Preview"  
+            class="img-responsive" />
+        </div>
+    </div>
 </div>

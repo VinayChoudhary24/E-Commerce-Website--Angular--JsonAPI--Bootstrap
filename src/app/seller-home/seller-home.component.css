@@ -1,25 +1,28 @@
 table {
-    text-align: left;
-    color: blueviolet;
+    text-align: center;
+    color: #33312E;
     border-collapse: collapse;
 }
 
 table, td, table, th {
-    border: 1px solid brown;
-    padding: 1opx;
+    border: 2px solid darkgray;
+    padding: 10px;
     min-height: 200px;
 }
 
 img {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
 }
 
 .product__options {
     margin-left: 5px;
     margin-right: 15px;
+    color: #788c05;
+    
 }
 
 .product__delete {
     cursor: pointer;
+    color: red;
 }
