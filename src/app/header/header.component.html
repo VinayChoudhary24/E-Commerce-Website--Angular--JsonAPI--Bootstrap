@@ -51,7 +51,9 @@
             <a href="#" id="line">
                 <!-- The Cart ICON -->
                 <span class="nav__optionsLineTwo"><fa-icon [icon]="cartIcon"></fa-icon></span>
-                <!-- <span className="header__optionLineTwo">{Cart.length}</span> -->
+                <!-- This will Show Number of Products Inside the Basket -->
+                <span class="nav__optionsLineTwo">{{ cartItems }}</span>
+
             </a>
             </div>
         </div>
@@ -79,7 +81,8 @@
             <a href="#" id="line">
                 <!-- The Cart ICON -->
                 <span class="nav__optionsLineTwo"><fa-icon [icon]="cartIcon"></fa-icon></span>
-                <!-- <span className="header__optionLineTwo">{Cart.length}</span> -->
+                <!-- This will Show Number of Products Inside the Basket -->
+                <span class="nav__optionsLineTwo">{{ cartItems }}</span>
             </a>
             </div>
         </div>

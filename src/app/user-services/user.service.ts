@@ -1,12 +1,15 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserSignInRequestData, UserSignUpRequestData } from '../data-type';
+import { UserSignInRequestData, UserSignInResponseData, UserSignUpRequestData } from '../data-type';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
+  // To show the Error Messsage for Wrong Emial,Password we need EventEmiiter
+  userAuthErrorMessage = new EventEmitter<boolean>(false);
 
   // it is Important to Create a INSTANCE/INJECT httpClient to call the API
   constructor( private http: HttpClient, 
@@ -23,11 +26,16 @@ export class UserService {
     }).subscribe( (resdata) => {
       // console.log({resdata});
 
-      // store the data in the LocalStorage
+      if(resdata) {
+        this.userAuthErrorMessage.emit(false);
+        // store the data in the LocalStorage
         localStorage.setItem('userData', JSON.stringify(resdata.body));
 
         // Redirect the User to HomePage
         this.router.navigate(['/']);
+      }else {
+        this.userAuthErrorMessage.emit(true);
+      }
     })
   }
 
@@ -36,15 +44,16 @@ export class UserService {
     console.log({user});
 
     // Call the API
-    this.http.get(`http://localhost:3000/users?email=${user.email}&password=${user.password}`, {
+    this.http.get<UserSignInResponseData[]>(`http://localhost:3000/users?email=${user.email}&password=${user.password}`, {
       observe: 'response'
     }).subscribe( (resdata: any) => {
       // conditions to Sign In
       if(resdata && resdata.body && resdata.body.length) {
-        localStorage.setItem('userData', JSON.stringify(resdata.body));
+        this.userAuthErrorMessage.emit(false);
+        localStorage.setItem('userData', JSON.stringify(resdata.body[0]));
         this.router.navigate(['/returns-orders']);
       }else {
-        return;
+        this.userAuthErrorMessage.emit(true);
       }
     }) 
   }

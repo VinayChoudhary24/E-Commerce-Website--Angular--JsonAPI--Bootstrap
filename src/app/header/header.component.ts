@@ -14,6 +14,9 @@ import { ProductService } from '../seller-services/product.service';
 })
 export class HeaderComponent implements OnInit {
 
+  // To Show the Cart Quantity
+  cartItems: number = 0;
+
   // The Cart Icon
   cartIcon = faCartShopping;
 
@@ -57,7 +60,15 @@ export class HeaderComponent implements OnInit {
           this.switchMode = 'default';
         }
       }
-    })
+    });
+  // Whis will get Items Inside the Cart From LocalStorage
+  let cartData = localStorage.getItem('cart');
+  if(cartData) {
+    this.cartItems = JSON.parse(cartData).length
+  }
+  this.productService.cartData.subscribe( (items) => {
+    this.cartItems = items.length;
+  })
   }
 
   // This will Signout the Seller
@@ -113,5 +124,5 @@ export class HeaderComponent implements OnInit {
   redirectToDetails(id: number) {
     this.router.navigate(['/details/' +id])
   }
-
+  
 }

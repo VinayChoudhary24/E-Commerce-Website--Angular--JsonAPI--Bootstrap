@@ -5,6 +5,11 @@
       "email": "test@test.com",
       "password": "123456",
       "id": 1
+    },
+    {
+      "email": "test@test",
+      "password": "1231231313",
+      "id": 2
     }
   ],
   "products": [
@@ -55,6 +60,11 @@
       "email": "test12@test.com",
       "password": "123456",
       "id": 1
+    },
+    {
+      "email": "test@test",
+      "password": "12312123123",
+      "id": 2
     }
   ]
 }

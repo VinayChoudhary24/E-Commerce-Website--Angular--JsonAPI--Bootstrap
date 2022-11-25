@@ -13,6 +13,14 @@ export interface SellerSignIpRequestData {
   password: string;
 }
 
+// Seller Sign In Response
+export interface SellerSignInResponseData {
+  email: string;
+  id: number;
+  name: string;
+  password: string;
+} 
+
 // This is for SellerAddNewProduct --ProductService
 export interface sellerAddNewProductData {
   productName: string;
@@ -21,6 +29,9 @@ export interface sellerAddNewProductData {
   productDetails: string;
   productImage: string;
   id: number;
+
+  // Add to Basket Property
+  quantity: undefined | number;
 }
 
 // *************************
@@ -35,5 +46,15 @@ export interface UserSignUpRequestData {
 // This is for the User Sign-In --UserService
 export interface UserSignInRequestData {
   email: string;
+  password: string;
+}
+
+// User Sign In Response
+
+// This is for the Seller Sign-In --SellerService
+export interface UserSignInResponseData {
+  email: string;
+  id: number;
+  name: string;
   password: string;
 }

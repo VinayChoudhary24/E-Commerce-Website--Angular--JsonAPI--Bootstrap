@@ -82,6 +82,25 @@ input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
     width: 500px;
 }
 
+/* For Forgotten Password */
+.forgot__password {
+    padding: 5px;
+    cursor: pointer;
+    color: #33312E;
+    text-decoration: none;
+}
+
+.forgot__password:hover {
+    text-decoration: underline;
+}
+
+/* The Forgot password Icon */
+.forgot__icon {
+    color: #33312E;
+    padding: 5px;
+}
+
+
 /* SignIn Button */
 .signin__button {
   border-radius: 6px;
@@ -99,4 +118,8 @@ input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
 
 .signin__button:hover {
     border: 2px solid darkolivegreen;
+}
+
+.signin__button:disabled {
+    cursor: not-allowed;
 }

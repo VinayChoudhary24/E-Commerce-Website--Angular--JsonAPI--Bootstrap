@@ -1,4 +1,4 @@
-<div>
+<div class="user__auth">
         <div class="user__container" *ngIf="switchMode">
                 <h2 style="color: #5D5179;">Create your Account</h2>
                 <form class="user__signUpForm" 
@@ -10,20 +10,24 @@
                 type="text"
                 id="name" 
                 placeholder="Enter Name"
-                ngModel
                 name="name"
+                ngModel
+                #name = "ngModel"
                 required
-                        />
+                name
+                />
             
                 <!-- Email Field -->
                 <input 
                 class="form__input" 
                 placeholder="Enter your email"
                 type="email"
-                id="email"
-                ngModel 
+                id="email" 
                 name="email"
-                required 
+                ngModel
+                #email = "ngModel"
+                required
+                email 
                 />
             
                 <!-- Password Field -->
@@ -32,13 +36,19 @@
                 placeholder="Password"
                 type="password"
                 id="password" 
-                ngModel 
                 name="password"
+                ngModel
+                #password = "ngModel"
                 required 
                 minlength="6" />
-            
+                
                 <button 
-                class="signup__button">Sign Up</button>
+                [disabled]="!userSignUp.valid"
+                class="signup__button" 
+                type="submit" >Sign Up</button>
+
+                <!-- Display the wrong Credentials Error -->
+                <h5 style="color: red;">{{ userErrorMessage }}</h5>
                         
                 <!-- To Toggle Between Sign-Up and Sign-In -->
                 <button 
@@ -61,9 +71,11 @@
             placeholder="Email"
             type="email"
             id="email"
-            ngModel 
             name="email"
-            required 
+            ngModel 
+            #email = "ngModel"
+            required
+            email
             />
 
             <!-- Password Field -->
@@ -71,15 +83,24 @@
             class="form__input" 
             placeholder="Password"
             type="password"
-            id="password" 
-            ngModel 
+            id="password"  
             name="password"
+            ngModel
+            #password = "ngModel"
             required 
             minlength="6" />
             
-            <button 
+            <!-- The Link for Forgotten your password -->
+            <a class="forgot__password"><strong>Forgotten your password?</strong>
+                <fa-icon class="forgot__icon" [icon]="forgotPasswordIcon"></fa-icon></a>
+            
+                <button 
+            [disabled]="!userSignInForm.valid"
             class="signin__button" 
             type="submit">Sign In</button>
+
+            <!-- Display the wrong Credentials Error -->
+            <h5 style="color: red;">{{ userErrorMessage }}</h5>
 
             <!-- To Display the Error -->
             <!-- <h2 style="color: red; font-family: Arial, Helvetica, sans-serif;">{{ sellerErrorMessage }}</h2> -->

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { SellerSignIpRequestData, SellerSignUpRequestData } from '../data-type';
+import { SellerSignInResponseData, SellerSignIpRequestData, SellerSignUpRequestData } from '../data-type';
 
 // This will be the Format of the Data for Response
 // export interface SellerResponseData {
@@ -40,13 +40,16 @@ export class SellerService {
       observe: 'response'
     } )
     .subscribe( (resdata) => {
-      this.isSellerSignUp.next(true);
-      
-      // This will store the Seller Data in LocalStorage
-      localStorage.setItem('sellerData', JSON.stringify(resdata.body));
+      // console.log({resdata});
 
+      if(resdata) {
+        this.isSellerSignUp.next(false);
+        // This will store the Seller Data in LocalStorage
+      localStorage.setItem('sellerData', JSON.stringify(resdata.body));
       this.router.navigate(['/seller-home']);
-      // console.log({resdata})
+      }else {
+        this.isSellerSignUp.next(true);
+      }
     })
     // return false;
   }
@@ -56,7 +59,7 @@ export class SellerService {
     console.log("data");
 
     // Use HttpReuest and Pass Dynamic Parameters
-    this.http.get(`http://localhost:3000/seller?email=${data.email}&password=${data.password}`, {
+    this.http.get<SellerSignInResponseData[]>(`http://localhost:3000/seller?email=${data.email}&password=${data.password}`, {
       observe: 'response'
     } )
     .subscribe( (resdata: any) => {
@@ -64,6 +67,7 @@ export class SellerService {
       // Conditions to SignIn
       if(resdata && resdata.body && resdata.body.length) {
         // console.log("Seller Sign In");
+        this.sellerError.emit(false);
         localStorage.setItem('sellerData', JSON.stringify(resdata.body))
         this.router.navigate(['/seller-home']);
       }else {

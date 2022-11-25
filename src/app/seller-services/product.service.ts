@@ -1,11 +1,14 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { sellerAddNewProductData } from '../data-type';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+
+  // To get the Cart Details
+  cartData = new EventEmitter<sellerAddNewProductData[] | []>();
 
   // Inject HttpClient to Use the POST Request
   constructor( private http: HttpClient ) { }
@@ -14,6 +17,10 @@ export class ProductService {
   sellerAddNewProduct( data: sellerAddNewProductData ){
     return this.http.post('http://localhost:3000/products', data);
   }
+  // #FIREBASE
+  // sellerAddNewProduct( data: sellerAddNewProductData ){
+  //   return this.http.post('https://e-commerce-project-angular-default-rtdb.firebaseio.com/products', data);
+  // }
 
   // SellerFetchProduct request to get the product data from the API
   sellerFetchProductList(  ) {
@@ -51,6 +58,34 @@ export class ProductService {
     return this.http.get<sellerAddNewProductData[]>(`http://localhost:3000/products?q=${query}`)
   }
 
-  // 
+  // This will Add the product to Basket
+  addProductToBasket(data: sellerAddNewProductData) {
+    let cartData = [];
+
+    // Check if the Cart is Empty or Not
+    let cart = localStorage.getItem('cart');
+    if(!cart) {
+      localStorage.setItem('cart', JSON.stringify([data]));
+    }else {
+      cartData = JSON.parse(cart);
+      cartData.push(data);
+      localStorage.setItem('cart', JSON.stringify([cartData]));
+    }
+    this.cartData.emit(cartData);
+  }
+  
+  // this will remove product/item from cart
+  removeProductFromCart(productId: number) {
+    let cartData = localStorage.getItem('cart');
+    if(cartData) {
+      let items:sellerAddNewProductData[] = JSON.parse(cartData);
+      items= items.filter( (item: sellerAddNewProductData) => {
+        productId !== item.id
+      })
+      // console.log(items);
+      localStorage.setItem('cart', JSON.stringify(items));
+      this.cartData.emit(items);
+    }
+  }
 
 }

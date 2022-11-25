@@ -12,8 +12,9 @@
             <p>{{ productIdData.productDetails }}</p>
 
             <div>
-            <button class="addTo__basket">Add to Basket</button>
             <button class="buy__now">Buy Now</button>
+            <button *ngIf="!removeCartItem" class="addTo__basket" (click)="addToBasket()">Add to cart</button>
+            <button *ngIf="removeCartItem" class="addTo__basket" (click)="removeItem(productIdData.id)">Remove item</button>
             </div>
 
             <!-- For No. of Quantity -->

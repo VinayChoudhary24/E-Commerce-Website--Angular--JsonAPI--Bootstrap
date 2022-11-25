@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SellerSignIpRequestData, SellerSignUpRequestData } from '../data-type';
 import { SellerService } from '../seller-services/seller.service';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-seller-auth',
@@ -10,11 +11,14 @@ import { SellerService } from '../seller-services/seller.service';
 })
 export class SellerAuthComponent implements OnInit {
 
+  // Forgotten password Icon
+  forgotPasswordIconSeller = faArrowUpRightFromSquare;
+
   // Switch from SignUp to SignIn
   switchMode = false;
 
   // To show the Error Message to the User
-  sellerErrorMessage = '';
+  sellerErrorMessage: string = '';
 
   // /Inject the SellerService Here to use all the Fuctions from the service
   constructor( private sellerService: SellerService,
@@ -35,7 +39,7 @@ export class SellerAuthComponent implements OnInit {
     this.sellerService.sellerSignUp(data);
     this.sellerService.sellerError.subscribe( (error) => {
       if(error) {
-        this.sellerErrorMessage = "An error occured!"
+        this.sellerErrorMessage = "Enter valid email or password"
       }
     })
   }
@@ -59,7 +63,7 @@ export class SellerAuthComponent implements OnInit {
     this.sellerService.sellerSignIn(data);
     this.sellerService.sellerError.subscribe( (error) => {
       if(error) {
-        this.sellerErrorMessage = "An error occured!"
+        this.sellerErrorMessage = "Enter valid email or password"
       }
     })
 

@@ -20,9 +20,11 @@
             type="text"
             id="name" 
             placeholder="Enter Name"
-            ngModel
             name="name"
+            ngModel
+            #name = "ngModel"
             required
+            name
             />
 
             <!-- Seller's Email -->
@@ -32,9 +34,11 @@
             type="email"
             id="email" 
             placeholder="Enter Email"
-            ngModel
             name="email"
+            ngModel
+            #email = "ngModel"
             required
+            email
             />
 
             <!-- Seller's Password -->
@@ -44,19 +48,20 @@
             type="password"
             id="password" 
             placeholder="Enter Password"
-            ngModel
             name="password"
+            ngModel
+            #password = "ngModel"
             required
             minlength="6"
             />
-
+            
             <button 
             class="form__button"
             type="submit" 
             [disabled]="!sellerSignUpForm.valid">Create your Account</button>
 
             <!-- Display the Error Message -->
-            <h3 style="color: red; font-family: Arial, Helvetica, sans-serif;" *ngIf="!sellerSignUpForm">{{ sellerErrorMessage }}</h3>
+            <h5 style="color: red;">{{ sellerErrorMessage }}</h5>
 
             <!-- To Toggle Between Sign-Up and Sign-In -->
             <button 
@@ -78,10 +83,12 @@
             class="form__input" 
             placeholder="Email"
             type="email"
-            id="email"
-            ngModel 
+            id="email" 
             name="email"
-            required 
+            ngModel
+            #email = "ngModel"
+            required
+            email 
             />
 
             <!-- Password Field -->
@@ -89,18 +96,24 @@
             class="form__input" 
             placeholder="Password"
             type="password"
-            id="password" 
-            ngModel 
+            id="password"  
             name="password"
+            ngModel
+            #password = "ngModel"
             required 
             minlength="6" />
+
+            <!-- The Link for Forgotten your password -->
+            <a class="forgot__password"><strong>Forgotten your password?</strong>
+                <fa-icon class="forgot__icon" [icon]="forgotPasswordIconSeller"></fa-icon></a>
             
-            <button 
+                <button 
             class="signin__button" 
-            type="submit">Sign In</button>
+            type="submit" 
+            [disabled]="!sellerSignInForm.valid">Sign In</button>
 
             <!-- To Display the Error -->
-            <h2 style="color: red; font-family: Arial, Helvetica, sans-serif;">{{ sellerErrorMessage }}</h2>
+            <h5 style="color: red;">{{ sellerErrorMessage }}</h5>
 
             <p style="color: rgb(134, 30, 50);font-size: large;">
                 By signing-in you agree to Madani.in Conditions of Use & Sale. Please see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice. 
