@@ -23,7 +23,7 @@ export class UserAuthComponent implements OnInit {
   constructor( private userService: UserService ) {}
 
   ngOnInit(): void {
-    // this.userService.userAuthReload();
+    this.userService.userAuthReload();
   }
 
   // The Function for User to Sign Up

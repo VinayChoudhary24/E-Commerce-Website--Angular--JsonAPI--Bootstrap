@@ -41,7 +41,7 @@ export class UserService {
 
   // This service will Sign In the User
   userSignIn(user: UserSignInRequestData) {
-    console.log({user});
+    // console.log({user});
 
     // Call the API
     this.http.get<UserSignInResponseData[]>(`http://localhost:3000/users?email=${user.email}&password=${user.password}`, {
@@ -50,7 +50,7 @@ export class UserService {
       // conditions to Sign In
       if(resdata && resdata.body && resdata.body.length) {
         this.userAuthErrorMessage.emit(false);
-        localStorage.setItem('userData', JSON.stringify(resdata.body[0]));
+        localStorage.setItem('userData', JSON.stringify(resdata.body));
         this.router.navigate(['/returns-orders']);
       }else {
         this.userAuthErrorMessage.emit(true);
@@ -59,9 +59,9 @@ export class UserService {
   }
 
   // 
-  // userAuthReload() {
-  //   if(localStorage.getItem('userData')) {
-  //     this.router.navigate(['/']);
-  //   }
-  // }
+  userAuthReload() {
+    if(localStorage.getItem('userData')) {
+      // this.router.navigate(['/']);
+    }
+  }
 }

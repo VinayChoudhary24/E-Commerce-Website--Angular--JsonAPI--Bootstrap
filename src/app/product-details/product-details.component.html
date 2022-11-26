@@ -1,27 +1,27 @@
 <div class="row product-details" *ngIf="productIdData">
-    <div class="col-sm-6">
+    <div class="col-sm-6 image__container">
         <img class="productId__image"
         src="{{ productIdData.productImage }}" 
         alt="" />
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6 details__container">
         <div class="details">
-            <h3>{{ productIdData.productName }}</h3>
-            <h4>Price: {{ productIdData.productPrice }}</h4>
-            <P>Category: {{ productIdData.productCategory }}</P>
-            <p>{{ productIdData.productDetails }}</p>
+            <h3 style="border-bottom: 2px solid darkgrey;">{{ productIdData.productName }}</h3>
+            <h4 style="border-bottom: 1px solid darkgrey;">Price: {{ productIdData.productPrice }}</h4>
+            <h6 style="border-bottom: 1px solid darkgrey;">Category: {{ productIdData.productCategory }}</h6>
+            <h5 style="border-bottom: 2px solid darkgrey;">{{ productIdData.productDetails }}</h5>
 
-            <div>
+            <div class="buttons__container">
             <button class="buy__now">Buy Now</button>
             <button *ngIf="!removeCartItem" class="addTo__basket" (click)="addToBasket()">Add to cart</button>
             <button *ngIf="removeCartItem" class="addTo__basket" (click)="removeItem(productIdData.id)">Remove item</button>
             </div>
 
             <!-- For No. of Quantity -->
-            <div class="product__quantity">
-                <button (click)="onQuantityChange('min')">-</button>
-                <input type="text" value="{{ productQuantityChange }}" />
-                <button (click)="onQuantityChange('max')">+</button>
+            <div class="product__quantityContainer">
+                <button class="increment__decrement" (click)="onQuantityChange('min')">-</button>
+                <input class="product__quantityInput" type="text" value="{{ productQuantityChange }}" />
+                <button class="increment__decrement" (click)="onQuantityChange('max')">+</button>
             </div>
         </div>
     </div>

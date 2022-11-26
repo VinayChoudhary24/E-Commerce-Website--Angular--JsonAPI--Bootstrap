@@ -56,7 +56,7 @@ export class SellerService {
 
   // For Seller Sign-In
   sellerSignIn( data: SellerSignIpRequestData ) {
-    console.log("data");
+    // console.log("data");
 
     // Use HttpReuest and Pass Dynamic Parameters
     this.http.get<SellerSignInResponseData[]>(`http://localhost:3000/seller?email=${data.email}&password=${data.password}`, {

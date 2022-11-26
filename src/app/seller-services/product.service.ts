@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
-import { sellerAddNewProductData } from '../data-type';
+import { cart, sellerAddNewProductData } from '../data-type';
 
 @Injectable({
   providedIn: 'root'
@@ -87,5 +87,10 @@ export class ProductService {
       this.cartData.emit(items);
     }
   }
+
+  // This API will add product to database
+  addToCartDatabase(cartData: cart) {
+    return this.http.post('http://localhost:3000/cart', cartData);
+  } 
 
 }

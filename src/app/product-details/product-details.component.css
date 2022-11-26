@@ -1,14 +1,123 @@
-.productId__image {
-    width: 100%;
-    height: 400px;
-    object-fit: contain;
-}
-
+/* This is the Main Container */
 .product-details {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    border-bottom: 2px solid darkgrey;
+    background-color: beige;
+    height: 500px;
 }
 
-h3, h4, p {
+/* This contains Image */
+.image__container {
+    border-right: 2px solid darkgrey;
+}
+
+/* This is the image */
+.productId__image {
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* The Details Container */
+.details__container {
+    border-left: 2px solid darkgrey;
+}
+
+/* This Contains the Details */
+.details {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+/* h3, h4, p {
     margin-bottom: 20px;
+} */
+
+/* This contains Buy Now, Add to basket and Remove Items Buttons */
+.buttons__container {
+    display: flex;
+    /* border: 1px solid red; */
+    padding: 5px;
+    margin: 5px;
+}
+
+/* Buy Now Button */
+.buy__now {
+    padding: 5px;
+    margin-right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 100px;
+    font-size: large;
+    border: 1px solid #CA831B;
+    border-radius: 5px;
+    background-color: #e6c153;
+    color: #2D2E2A;
+    cursor: pointer;
+}
+
+.buy__now:hover {
+    border: 1px solid;
+   
+}
+
+/* Add to Basket Button */
+.addTo__basket {
+    padding: 5px;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 140px;
+    font-size: large;
+    border: 1px solid #CA831B;
+    border-radius: 5px;
+    background-color: #e6c153;
+    color: #2D2E2A;
+    cursor: pointer;
+}
+
+.addTo__basket:hover {
+    border: 1px solid;
+}
+
+/* This contains Increment, decrement and Input fields */
+.product__quantityContainer {
+    /* border: 1px solid red; */
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* The Product quantity Input Field */
+.product__quantityInput {
+    border: 1px solid #2D2E2A;
+    text-align: center;
+    border-radius: 10px;
+    margin: 10px;
+    width: 40px;
+    height: 30px;
+    padding: 10px;
+    outline-width: 0;
+    font-size: large;
+}
+
+/* The increment and Decrement Buttons */
+.increment__decrement {
+    background-color: #e6c153;
+    border: 2px solid #2D2E2A;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    width: 40px;
+    height: 30px;
+    padding: 10px;
+    margin: 10px;
 }

@@ -58,3 +58,17 @@ export interface UserSignInResponseData {
   name: string;
   password: string;
 }
+
+// This is for the cartData
+export interface cart {
+  productName: string;
+  productPrice: string;
+  productCategory: string;
+  productDetails: string;
+  productImage: string;
+  id: number | undefined;
+  // Add to Basket Property
+  quantity: undefined | number;
+  userId: number;
+  productId: number;
+}

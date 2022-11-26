@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { sellerAddNewProductData } from '../data-type';
+import { cart, sellerAddNewProductData } from '../data-type';
 import { ProductService } from '../seller-services/product.service';
 
 @Component({
@@ -28,7 +28,7 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit(): void {
     // Get the Searched productId From URl
     let productIdDetails = this.activatedRoute.snapshot.paramMap.get('productId');
-    console.log({productIdDetails});
+    // console.log({productIdDetails});
 
     // Re-use API from productService i.e getProductDeatils
     productIdDetails && this.productService.getProductDeatils(productIdDetails).subscribe( (resdata) => {
@@ -67,11 +67,34 @@ export class ProductDetailsComponent implements OnInit {
     if(this.productIdData) {
       this.productIdData.quantity = this.productQuantityChange;
       // console.log(this.productIdData);
-      // Check if the User if SignIn or Not
+      // Condition for the user not Signed In
       if(!localStorage.getItem('userData')) {
         // Call the Function from product Service i.e addProductToBasket
         this.productService.addProductToBasket(this.productIdData);
         this.removeCartItem = true;
+      }else {
+        // The User is Signed In
+        // console.log("user signed in");
+
+        // If the User is Signed In We have to Get the Id of the User from localStorage
+        let user = localStorage.getItem('userData');
+        let userId = user && JSON.parse(user).id
+        // console.log({userId});
+        let cartData: cart = {
+          ...this.productIdData,
+          userId,
+          productId: this.productIdData.id
+        }
+        delete cartData.id
+        // console.log({cartData});
+
+        // Calling the Service Function addToCartDatabase
+        this.productService.addToCartDatabase(cartData).subscribe( (resdata) => {
+          // console.log({resdata});
+          if(resdata) {
+            console.log(resdata, "Product added to Cart and database");
+          }
+        })
       }
     }
   }

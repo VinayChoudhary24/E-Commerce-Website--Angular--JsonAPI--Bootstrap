@@ -66,5 +66,17 @@
       "password": "12312123123",
       "id": 2
     }
+  ],
+  "cart": [
+    {
+      "productName": "SAMSUNG GALAXY Z FOLD 4",
+      "productCategory": "Mobile Phones",
+      "productImage": "https://www.sammobile.com/wp-content/uploads/2021/08/Galaxy-Z-Fold-3-16.jpg",
+      "productPrice": "1,54,999/-",
+      "productDetails": "THE PHONE COMES WITH A 7.60-INCH TOUCHSCREEN PRIMARY DISPLAY OFFERING A RESOLUTION OF 2176x1812 PIXELS. IT ALSO FEATURES A 6.20-INCH TOUCHSCREEN AS A SECOND DISPLAY, WITH A RESOLUTION OF 904x2316.",
+      "quantity": 1,
+      "productId": 4,
+      "id": 1
+    }
   ]
 }
