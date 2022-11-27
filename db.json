@@ -77,6 +77,90 @@
       "quantity": 1,
       "productId": 4,
       "id": 1
+    },
+    {
+      "productName": "SAMSUNG GALAXY Z FOLD 4",
+      "productCategory": "Mobile Phones",
+      "productImage": "https://www.sammobile.com/wp-content/uploads/2021/08/Galaxy-Z-Fold-3-16.jpg",
+      "productPrice": "1,54,999/-",
+      "productDetails": "THE PHONE COMES WITH A 7.60-INCH TOUCHSCREEN PRIMARY DISPLAY OFFERING A RESOLUTION OF 2176x1812 PIXELS. IT ALSO FEATURES A 6.20-INCH TOUCHSCREEN AS A SECOND DISPLAY, WITH A RESOLUTION OF 904x2316.",
+      "quantity": 1,
+      "productId": 4,
+      "id": 2
+    },
+    {
+      "productName": "SAMSUNG GALAXY Z FOLD 4",
+      "productCategory": "Mobile Phones",
+      "productImage": "https://www.sammobile.com/wp-content/uploads/2021/08/Galaxy-Z-Fold-3-16.jpg",
+      "productPrice": "1,54,999/-",
+      "productDetails": "THE PHONE COMES WITH A 7.60-INCH TOUCHSCREEN PRIMARY DISPLAY OFFERING A RESOLUTION OF 2176x1812 PIXELS. IT ALSO FEATURES A 6.20-INCH TOUCHSCREEN AS A SECOND DISPLAY, WITH A RESOLUTION OF 904x2316.",
+      "quantity": 1,
+      "productId": 4,
+      "id": 3
+    },
+    {
+      "productName": "SAMSUNG GALAXY Z FOLD 4",
+      "productCategory": "Mobile Phones",
+      "productImage": "https://www.sammobile.com/wp-content/uploads/2021/08/Galaxy-Z-Fold-3-16.jpg",
+      "productPrice": "1,54,999/-",
+      "productDetails": "THE PHONE COMES WITH A 7.60-INCH TOUCHSCREEN PRIMARY DISPLAY OFFERING A RESOLUTION OF 2176x1812 PIXELS. IT ALSO FEATURES A 6.20-INCH TOUCHSCREEN AS A SECOND DISPLAY, WITH A RESOLUTION OF 904x2316.",
+      "quantity": 1,
+      "productId": 4,
+      "id": 4
+    },
+    {
+      "productName": "IPHONE 14 PRO ",
+      "productCategory": "Mobile Phones",
+      "productImage": "https://9to5mac.com/wp-content/uploads/sites/6/2022/09/iPhone-14-wallpapers.jpg?quality=82&strip=all",
+      "productPrice": "1,29,900/-",
+      "productDetails": "THE IPHONE 14 PRO INTRODUCES A NEW DYNAMIC ISLAND AREA INSTEAD OF A NOTCH< AN UPGRADED 48-MEGAPIXEL PRIMARY CAMERA, AND AN ALWAYS-ON DISPLAY.",
+      "quantity": 1,
+      "productId": 3,
+      "id": 5
+    },
+    {
+      "productName": "GOOGLE PIXEL 7 PRO",
+      "productCategory": "Mobile Phones",
+      "productImage": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pixel-7-main-image-1666188282.png",
+      "productPrice": "42,999/-",
+      "productDetails": "THE GOOGLE PIXEL 7 PRO GETS THE PREMIUM TREATMENT WITH A SHARPER CURVED EDGE DISPLAY, MORE CAMERAS AND BIGGER BATTERY.",
+      "quantity": 1,
+      "productId": 1,
+      "id": 6
+    },
+    {
+      "productName": "GOOGLE PIXEL 7 PRO",
+      "productCategory": "Mobile Phones",
+      "productImage": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pixel-7-main-image-1666188282.png",
+      "productPrice": "42,999/-",
+      "productDetails": "THE GOOGLE PIXEL 7 PRO GETS THE PREMIUM TREATMENT WITH A SHARPER CURVED EDGE DISPLAY, MORE CAMERAS AND BIGGER BATTERY.",
+      "quantity": 1,
+      "productId": 1,
+      "id": 7
+    },
+    {
+      "0": [
+        {
+          "productName": "GOOGLE PIXEL 7 PRO",
+          "productCategory": "Mobile Phones",
+          "productImage": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pixel-7-main-image-1666188282.png",
+          "productPrice": "42,999/-",
+          "productDetails": "THE GOOGLE PIXEL 7 PRO GETS THE PREMIUM TREATMENT WITH A SHARPER CURVED EDGE DISPLAY, MORE CAMERAS AND BIGGER BATTERY.",
+          "id": 1,
+          "quantity": 1
+        }
+      ],
+      "1": {
+        "productName": "MOTOROLA EDGE 30 FUSION",
+        "productCategory": "Mobile Phones",
+        "productImage": "https://gizchina.it/wp-content/uploads/2022/09/Moto-edge-30-ultra-edge-30-neo-edge-30-fusion.jpg",
+        "productPrice": "97,000/-",
+        "productDetails": "THE MOTOROLA 30 FUSION AIMS TO STRIKE THE RIGHT BALANCE BY OFFERING FLAGSHIP-GRADE HARDWARE WRAPPED INSIDE A PREMIUM BODY.",
+        "id": 2,
+        "quantity": 1
+      },
+      "userId": null,
+      "id": 8
     }
   ]
 }

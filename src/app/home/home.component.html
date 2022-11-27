@@ -20,7 +20,7 @@
 
 <!-- This will show the product List -->
 <div class="productlist__container">
-	<h1 class="top__products">Top Selling products</h1>
+	<h1 style="color: #3B3E38;" class="top__products">TOP SELLING PRODUCTS</h1>
 
 	<!-- Display the Product List in Home Page -->
 	<div class="row">
@@ -30,8 +30,8 @@
 				<img class="product__picture" src="{{ topProduct.productImage }}" alt="" />
 			
 			<div class="product__details">
-				<h5 class="product__name">{{ topProduct.productName }}</h5>
-				<div class="product__price">Price: {{ topProduct.productPrice }}</div>
+				<h5 style="border-bottom: 1px solid lightgrey;" class="product__name">{{ topProduct.productName }}</h5>
+				<div style="border-bottom: 1px solid lightgrey;" class="product__price">Price: {{ topProduct.productPrice }}</div>
 				<!-- <div class="product__priceColor">{{ topProduct.productDetails }}</div> -->
 			</div>
 

@@ -35,9 +35,9 @@
 
 /* This is the Container for the Product List */
 .productlist__container {
-    margin-top: 80px;
-    margin-bottom: 80px;
-    margin: 20px;
+    /* margin-top: 5px; */
+    margin-bottom: 60px;
+    padding: 10px;
 }
 
 /* Heading */

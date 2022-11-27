@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UserSignInRequestData, UserSignUpRequestData } from '../data-type';
+import { cart, sellerAddNewProductData, UserSignInRequestData, UserSignUpRequestData } from '../data-type';
 import { UserService } from '../user-services/user.service';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { ProductService } from '../seller-services/product.service';
 
 @Component({
   selector: 'app-user-auth',
@@ -20,7 +21,9 @@ export class UserAuthComponent implements OnInit {
   switchMode = true;
 
   // Inject userService to use the service Functionality and Methods for API
-  constructor( private userService: UserService ) {}
+  constructor( private userService: UserService,
+            //  Inject productService to call addToCartDatabase
+              private productService: ProductService ) {}
 
   ngOnInit(): void {
     this.userService.userAuthReload();
@@ -36,11 +39,13 @@ export class UserAuthComponent implements OnInit {
       // console.log({error});
       if(error) {
         this.userErrorMessage = "Enter valid details"
+      }else {
+        this.cartToDatabase();
       }
     })
 
     // To check for Error
-    this.userErrorMessage = "Enter valid email or password."
+    // this.userErrorMessage = "Enter valid email or password."
   }
   
    // This will Redirect from SignIn to SignUp
@@ -64,7 +69,44 @@ export class UserAuthComponent implements OnInit {
       console.log({error});
       if(error) {
         this.userErrorMessage = "Enter valid email or password"
+      }else {
+        this.cartToDatabase();
       }
     })
   }
+
+  // This Function will add Products from cart[NOT Signed In] to Database[Signed In]
+  cartToDatabase() {
+    // get userData and cart from LocalStorage
+    let data = localStorage.getItem('cart');
+    if(data) {
+      let cartDataList: sellerAddNewProductData[] = JSON.parse(data);
+      let user = localStorage.getItem('userData');
+      let userId = user && JSON.parse(user).id;
+
+      // apply Loop on the List
+      cartDataList.forEach( (product: sellerAddNewProductData, index) => {
+        let cartData: cart = {
+          ...product,
+          productId: product.id,
+          userId
+        };
+
+        delete cartData.id;
+        setTimeout( () => {
+          // call addToCartDatabase from productService
+        this.productService.addToCartDatabase(cartData).subscribe( (resdata) => {
+          if(resdata) {
+            console.log({resdata});
+          }
+        })
+        // To Empty the LocalStorage
+        if(cartDataList.length === index + 1) {
+          localStorage.removeItem('cart');
+        }
+        }, 500)
+      })
+    }
+  }
+
 }
