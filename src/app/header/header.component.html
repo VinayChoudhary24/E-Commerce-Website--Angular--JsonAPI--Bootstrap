@@ -7,7 +7,7 @@
 
     <!-- Middle Part of the Header -- Search Input and Button -->
     <!-- Use *ngIf to show the search Bar when in userMode and defaultMode, but Hide the Search Bar when in Seller-home page -->
-    <div *ngIf="switchMode === 'userData' || 'defualt'" class="nav__search">
+    <div *ngIf="switchMode === 'user' || 'defualt'" class="nav__search">
         <input
         #searchInput
         (keyup)="searchedProduct($event)"
@@ -48,7 +48,7 @@
         </div>
         <div class="nav__optionsBasket">
             <!-- BASKET ICON -->
-            <a href="#" id="line">
+            <a routerLink="/app-cart" id="line">
                 <!-- The Cart ICON -->
                 <span class="nav__optionsLineTwo"><fa-icon [icon]="cartIcon"></fa-icon></span>
                 <!-- This will Show Number of Products Inside the Basket -->
@@ -78,7 +78,7 @@
         </div>
         <div class="nav__optionsBasket">
             <!-- BASKET ICON -->
-            <a href="#" id="line">
+            <a routerLink="/app-cart" id="line">
                 <!-- The Cart ICON -->
                 <span class="nav__optionsLineTwo"><fa-icon [icon]="cartIcon"></fa-icon></span>
                 <!-- This will Show Number of Products Inside the Basket -->

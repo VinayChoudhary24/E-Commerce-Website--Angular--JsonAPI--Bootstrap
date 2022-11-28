@@ -29,9 +29,9 @@ export interface sellerAddNewProductData {
   productDetails: string;
   productImage: string;
   id: number;
-
   // Add to Basket Property
   quantity: undefined | number;
+  productId: undefined | number;
 }
 
 // *************************
@@ -67,7 +67,6 @@ export interface cart {
   productDetails: string;
   productImage: string;
   id: number | undefined;
-  // Add to Basket Property
   quantity: undefined | number;
   userId: number;
   productId: number;

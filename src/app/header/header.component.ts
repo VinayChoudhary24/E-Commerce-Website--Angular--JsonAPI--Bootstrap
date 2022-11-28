@@ -45,16 +45,17 @@ export class HeaderComponent implements OnInit {
           // console.log("in seller home")
           // To Display the Name of the Seller
             let sellerNameStore = localStorage.getItem('sellerData');
-            let sellerStoredData = sellerNameStore && JSON.parse(sellerNameStore)[0];
+            let sellerStoredData = sellerNameStore && JSON.parse(sellerNameStore);
             this.sellerName = sellerStoredData.name;
             this.switchMode = 'seller';
 
           // To check for the UserData and Display the Name of the User
         }else if(localStorage.getItem('userData')) {
-            let userNameStore = localStorage.getItem('userData');
-            let userStoredData = userNameStore && JSON.parse(userNameStore)[0];
+            let userData = localStorage.getItem('userData');
+            let userStoredData = userData && JSON.parse(userData);
             this.userName = userStoredData.name;
             this.switchMode = 'user';
+            this.productService.updateCartList(userStoredData.id)
         } else {
           // console.log("outside Seller Area")
           this.switchMode = 'default';
@@ -75,14 +76,15 @@ export class HeaderComponent implements OnInit {
   sellerSignOut() {
     localStorage.removeItem('sellerData');
     this.router.navigate(['/']);
-    this.switchMode = 'default';
+    // this.switchMode = 'default';
   }
 
   // This will SignOut the User
   userSignOut() {
     localStorage.removeItem('userData');
     this.router.navigate(['/']);
-    this.switchMode = 'default';
+    // this.switchMode = 'default';
+    this.productService.cartData.emit([]);
   }
 
   // Call the searchedProduct Event on the Search Input Field

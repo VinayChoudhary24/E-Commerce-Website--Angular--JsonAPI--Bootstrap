@@ -17,7 +17,8 @@ import { SearchComponent } from './search/search.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { UserAuthComponent } from './user-auth/user-auth.component';
-import { UserReturnsAndOrdersComponent } from './user-returns-and-orders/user-returns-and-orders.component'
+import { UserReturnsAndOrdersComponent } from './user-returns-and-orders/user-returns-and-orders.component';
+import { CartPageComponent } from './cart-page/cart-page.component'
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { UserReturnsAndOrdersComponent } from './user-returns-and-orders/user-re
     ProductDetailsComponent,
     UserAuthComponent,
     UserReturnsAndOrdersComponent,
+    CartPageComponent,
   ],
   imports: [
     BrowserModule,

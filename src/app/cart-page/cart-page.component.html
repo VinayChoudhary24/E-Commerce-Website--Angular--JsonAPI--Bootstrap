@@ -1,0 +1,52 @@
+<!-- This is the Main Container  -->
+<div class="cart">
+    <h1>Your Shopping List</h1>
+
+    <!-- This Contains the Items List -->
+    <div class="row">
+        <div class="col-sm-8 details">
+            <!-- Apply for Loop for the Rest of the Products -->
+            <ul *ngFor="let cart of cartData">
+                <li>
+                    <img
+                    class="cartItem__image" 
+                    src="{{ cart.productImage }}" 
+                    alt="" />
+                </li>
+                <li>
+                    <span>{{ cart.productName }}</span>
+                </li>
+                <li>
+                    <span>Price: {{ cart.productPrice }}</span>
+                </li>
+                <li>
+                    <span>{{ cart.quantity }}</span>
+                </li>
+                <li>
+                    <button>Remove item</button>
+                </li>
+            </ul>
+        </div>
+        <!-- This contains the Total Amount and Charges -->
+        <div class="col-sm-4 summary">
+            <h3>Summary</h3>
+            <ul>
+                <li>
+                    <span>Amount</span><span>3000</span>
+                </li>
+                <li>
+                    <span>Tax</span><span>30</span>
+                </li>
+                <li>
+                    <span>Delivery Charges</span><span>300</span>
+                </li>
+                <li>
+                    <span>Discount</span><span>3000</span>
+                </li>
+                <li>
+                    <span>Total Amount</span><span>3230</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

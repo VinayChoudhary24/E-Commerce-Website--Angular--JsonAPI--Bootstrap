@@ -66,6 +66,7 @@ export class ProductService {
     let cart = localStorage.getItem('cart');
     if(!cart) {
       localStorage.setItem('cart', JSON.stringify([data]));
+      this.cartData.emit([data]);
     }else {
       cartData = JSON.parse(cart);
       cartData.push(data);
@@ -91,6 +92,29 @@ export class ProductService {
   // This API will add product to database
   addToCartDatabase(cartData: cart) {
     return this.http.post('http://localhost:3000/cart', cartData);
-  } 
+  }
+  
+  // To Update the Cart Value in the Header
+  updateCartList(userId: number) {
+    return this.http.get<sellerAddNewProductData[]>(`http://localhost:3000/cart?userId=` + userId, {
+      observe: 'response'
+    }).subscribe( (resdata) => {
+      if(resdata && resdata.body) {
+        this.cartData.emit(resdata.body);
+      }
+    })
+  }
+
+  // Remove item from CartList
+  removeToCart(cartId: number) {
+    return this.http.delete('http://localhost:3000/cart' + cartId)
+  }
+
+  // This service is for the Cart Page i.e to get the Products on the Cart page
+  currentCart() {
+    let userData = localStorage.getItem('userData');
+    let userStoredData = userData && JSON.parse(userData);
+    return this.http.get<cart[]>('http://localhost:3000/cart?userId=' + userStoredData.id)
+  }
 
 }

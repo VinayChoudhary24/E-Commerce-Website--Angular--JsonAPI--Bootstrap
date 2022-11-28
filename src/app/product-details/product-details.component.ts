@@ -10,6 +10,9 @@ import { ProductService } from '../seller-services/product.service';
 })
 export class ProductDetailsComponent implements OnInit {
 
+  // to remove the item from cart
+  cartData: sellerAddNewProductData | undefined;
+
   // To remove the item from Cart
   removeCartItem = false;
 
@@ -48,6 +51,20 @@ export class ProductDetailsComponent implements OnInit {
           this.removeCartItem = true;
         }
       }
+      let userData = localStorage.getItem('userData');
+      if(userData) {
+        let userId = userData && JSON.parse(userData).id;
+        this.productService.updateCartList(userId);
+        this.productService.cartData.subscribe( (resdata) => {
+        let item = resdata.filter( (item: sellerAddNewProductData) => {
+            productIdDetails?.toString() === item.productId?.toString()
+          })
+          if(item.length) {
+            this.cartData = item[0];
+            this.removeCartItem = true;
+          }
+        })
+      }
     })
   }
 
@@ -77,8 +94,8 @@ export class ProductDetailsComponent implements OnInit {
         // console.log("user signed in");
 
         // If the User is Signed In We have to Get the Id of the User from localStorage
-        let user = localStorage.getItem('userData');
-        let userId = user && JSON.parse(user).id
+        let userData = localStorage.getItem('userData');
+        let userId = userData && JSON.parse(userData).id
         // console.log({userId});
         let cartData: cart = {
           ...this.productIdData,
@@ -92,7 +109,10 @@ export class ProductDetailsComponent implements OnInit {
         this.productService.addToCartDatabase(cartData).subscribe( (resdata) => {
           // console.log({resdata});
           if(resdata) {
-            console.log(resdata, "Product added to Cart and database");
+            // This will update the cart Value in Header
+            // console.log(resdata, "Product added to Cart and database");
+            this.productService.updateCartList(userId);
+            this.removeCartItem = true;
           }
         })
       }
@@ -101,9 +121,21 @@ export class ProductDetailsComponent implements OnInit {
 
   // This will remove from Cart
   removeItem(productId: number) {
+    if(!localStorage.getItem('userData')) {
     // call the Function from Product Service i.e removeProductFromCart
     this.productService.removeProductFromCart(productId);
-    this.removeCartItem = false;
+    }else {
+      // If the User is Signed In We have to Get the Id of the User from localStorage
+      let userData = localStorage.getItem('userData');
+      let userId = userData && JSON.parse(userData).id
+      // Call API removeToCart from productService
+      this.cartData && this.productService.removeToCart(this.cartData.id).subscribe( (resdata) => {
+        if(resdata) {
+          this.productService.updateCartList(userId);
+        }
+      })
+      this.removeCartItem = false;
+    }
   }
 
 }

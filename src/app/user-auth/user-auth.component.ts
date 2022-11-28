@@ -79,10 +79,10 @@ export class UserAuthComponent implements OnInit {
   cartToDatabase() {
     // get userData and cart from LocalStorage
     let data = localStorage.getItem('cart');
+    let userData = localStorage.getItem('userData');
+    let userId = userData && JSON.parse(userData).id;
     if(data) {
       let cartDataList: sellerAddNewProductData[] = JSON.parse(data);
-      let user = localStorage.getItem('userData');
-      let userId = user && JSON.parse(user).id;
 
       // apply Loop on the List
       cartDataList.forEach( (product: sellerAddNewProductData, index) => {
@@ -100,13 +100,17 @@ export class UserAuthComponent implements OnInit {
             console.log({resdata});
           }
         })
+        }, 500);
         // To Empty the LocalStorage
         if(cartDataList.length === index + 1) {
           localStorage.removeItem('cart');
         }
-        }, 500)
       })
     }
+    setTimeout( () => {
+      // Call the Service Function updateCartList from product service
+    this.productService.updateCartList(userId);
+    }, 2000)
   }
 
 }
