@@ -32,21 +32,24 @@
             <h3>Summary</h3>
             <ul>
                 <li>
-                    <span>Amount</span><span>3000</span>
+                    <span>Amount</span><span>{{ priceSummary.price }}</span>
                 </li>
                 <li>
-                    <span>Tax</span><span>30</span>
+                    <span>Tax</span><span>{{ priceSummary.tax }}</span>
                 </li>
                 <li>
-                    <span>Delivery Charges</span><span>300</span>
+                    <span>Delivery Charges</span><span>{{ priceSummary.delivery }}</span>
                 </li>
                 <li>
-                    <span>Discount</span><span>3000</span>
+                    <span>Discount</span><span>{{ priceSummary.discount }}</span>
                 </li>
                 <li>
-                    <span>Total Amount</span><span>3230</span>
+                    <span>Total Amount</span><span>{{ priceSummary.total }}</span>
                 </li>
+
+                <button (click)="onCheckout()">Checkout</button>
             </ul>
+            
         </div>
     </div>
 </div>

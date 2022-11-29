@@ -1,0 +1,61 @@
+<div class="checkout">
+
+    <!-- Order Success message -->
+    <h3>{{ orderSuccessMessage }}</h3>
+
+    <div class="row">
+        <div class="col-sm-7 checkout__address">
+            <h3>Add Shipping Address</h3>
+            <!-- The Address Form of User -->
+            <form 
+            #addressData="ngForm" 
+            (ngSubmit)="onOrderNow(addressData.value)" >
+
+            <!-- Name -->
+            <input 
+            type="text"
+            placeholder="Enter Name"
+            ngModel
+            name="name"
+            name
+            required />
+
+            <!-- Email -->
+            <input 
+            type="email"
+            placeholder="Enter Email"
+            ngModel
+            name="email"
+            email
+            required />
+
+            <!-- Address Section -->
+            <input 
+            type="text" 
+            placeholder="Enter Delivery Address"
+            ngModel 
+            name="address" 
+            address 
+            required >
+
+            <!-- Add Contact Details -->
+            <input 
+            type="tel" 
+            placeholder="Enter Your Contact Details" 
+            ngModel 
+            name="tel"
+            tel 
+            required />
+
+            <!-- Payment Button -->
+            <button type="submit" >Order Now</button>
+
+            </form>
+        </div>
+
+        <!-- The Total Section -->
+        <div class="col-sm-5">
+            <h3>Total Amount: {{ totalPrice }}</h3>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
-import { cart, sellerAddNewProductData } from '../data-type';
+import { cart, orderData, orderNowRequestData, sellerAddNewProductData } from '../data-type';
 
 @Injectable({
   providedIn: 'root'
@@ -115,6 +115,29 @@ export class ProductService {
     let userData = localStorage.getItem('userData');
     let userStoredData = userData && JSON.parse(userData);
     return this.http.get<cart[]>('http://localhost:3000/cart?userId=' + userStoredData.id)
+  }
+
+  // This is the API for the Checkout Page
+  orderNowData(data: orderData) {
+    return this.http.post('http://localhost:3000/orders', data)
+  }
+
+  // This is the API for the Returns and Orders Page
+  ordersListData() {
+    let userData = localStorage.getItem('userData');
+    let userStoredData = userData && JSON.parse(userData);
+    return this.http.get<orderData[]>('http://localhost:3000/orders?userId=' + userStoredData)
+  }
+
+  // This API will EMPTY the Cart after Order Placed
+  clearCartData(cartId: number) {
+    return this.http.delete('http://localhost:3000/cart/' + cartId, {
+      observe: 'response'
+    }).subscribe( (resdata) => {
+      if(resdata) {
+        this.cartData.emit([]);
+      }
+    })
   }
 
 }

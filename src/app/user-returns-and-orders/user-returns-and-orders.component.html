@@ -1,1 +1,44 @@
-<p>user-returns-and-orders works!</p>
+<!-- The Main Container for Orders List -->
+<div class="orders">
+    <h2>My Orders and Returns</h2>
+    <div class="row orders__heading">
+        <!-- Table With BootStrap -->
+        <div class="col-sm-2">
+            <span>Order</span>
+        </div>
+        <div class="col-sm-2">
+            <span>Order Id</span>
+        </div>
+        <div class="col-sm-2">
+            <span>Price</span>
+        </div>
+        <div class="col-sm-2">
+            <span>Status</span>
+        </div>
+        <div class="col-sm-2">
+            <span>Options</span>
+        </div>
+    </div>
+
+    <div class="row orders__details" *ngFor="let order of orderData">
+        <!-- Table With BootStrap -->
+        <div class="col-sm-2">
+            <img 
+            class="orders__image"
+            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pixel-7-main-image-1666188282.png" 
+            alt="" >
+        </div>
+        <div class="col-sm-2">
+            <span>{{ order.id }}</span>
+        </div>
+        <div class="col-sm-2">
+            <span>{{ order.totalPrice }}</span>
+        </div>
+        <div class="col-sm-2">
+            <span>In process</span>
+        </div>
+        <div class="col-sm-2">
+            <span><button>Cancel order</button></span>
+        </div>        
+    </div>
+</div>

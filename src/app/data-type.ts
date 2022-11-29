@@ -71,3 +71,31 @@ export interface cart {
   userId: number;
   productId: number;
 }
+
+// This will be the Total Price Summary of all the products in the Cart
+export interface priceSummary {
+  price: number,
+  discount: number,
+  tax: number,
+  delivery: number,
+  total: number
+} 
+
+// This will be the OrderNow Request from User
+export interface orderNowRequestData {
+  address: string;
+  email: string;
+  tel: string;
+}
+
+// This is to Get the User Details with OrderData
+export interface orderData {
+  email: string;
+  address: string;
+  tel: string;
+  totalPrice: number;
+  userId: number;
+  id?: number;
+}
+
+

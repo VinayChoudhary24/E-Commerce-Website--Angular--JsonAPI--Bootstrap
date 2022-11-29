@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CartPageComponent } from './cart-page/cart-page.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 import { HomeComponent } from './home/home.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { SearchComponent } from './search/search.component';
@@ -68,7 +69,10 @@ const routes: Routes = [
 },
 
 // Loads Users Cart Page
-{ path: 'app-cart', component: CartPageComponent }, 
+{ path: 'app-cart', component: CartPageComponent },
+
+// Load the Checkout Page for Delivery
+{ path: 'app-checkout', component: CheckoutComponent },
 
   // Load Error Component
   // { path: '**', component: PageNotFoundComponent }
