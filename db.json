@@ -17,7 +17,7 @@
       "productName": "GOOGLE PIXEL 7 PRO",
       "productCategory": "Mobile Phones",
       "productImage": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pixel-7-main-image-1666188282.png",
-      "productPrice": "42,999/-",
+      "productPrice": "42999",
       "productDetails": "THE GOOGLE PIXEL 7 PRO GETS THE PREMIUM TREATMENT WITH A SHARPER CURVED EDGE DISPLAY, MORE CAMERAS AND BIGGER BATTERY.",
       "id": 1
     },
@@ -25,7 +25,7 @@
       "productName": "MOTOROLA EDGE 30 FUSION",
       "productCategory": "Mobile Phones",
       "productImage": "https://gizchina.it/wp-content/uploads/2022/09/Moto-edge-30-ultra-edge-30-neo-edge-30-fusion.jpg",
-      "productPrice": "97,000/-",
+      "productPrice": "97000",
       "productDetails": "THE MOTOROLA 30 FUSION AIMS TO STRIKE THE RIGHT BALANCE BY OFFERING FLAGSHIP-GRADE HARDWARE WRAPPED INSIDE A PREMIUM BODY.",
       "id": 2
     },
@@ -33,7 +33,7 @@
       "productName": "IPHONE 14 PRO ",
       "productCategory": "Mobile Phones",
       "productImage": "https://9to5mac.com/wp-content/uploads/sites/6/2022/09/iPhone-14-wallpapers.jpg?quality=82&strip=all",
-      "productPrice": "1,29,900/-",
+      "productPrice": "129900",
       "productDetails": "THE IPHONE 14 PRO INTRODUCES A NEW DYNAMIC ISLAND AREA INSTEAD OF A NOTCH< AN UPGRADED 48-MEGAPIXEL PRIMARY CAMERA, AND AN ALWAYS-ON DISPLAY.",
       "id": 3
     },
@@ -41,7 +41,7 @@
       "productName": "SAMSUNG GALAXY Z FOLD 4",
       "productCategory": "Mobile Phones",
       "productImage": "https://www.sammobile.com/wp-content/uploads/2021/08/Galaxy-Z-Fold-3-16.jpg",
-      "productPrice": "1,54,999/-",
+      "productPrice": "154999",
       "productDetails": "THE PHONE COMES WITH A 7.60-INCH TOUCHSCREEN PRIMARY DISPLAY OFFERING A RESOLUTION OF 2176x1812 PIXELS. IT ALSO FEATURES A 6.20-INCH TOUCHSCREEN AS A SECOND DISPLAY, WITH A RESOLUTION OF 904x2316.",
       "id": 4
     },
@@ -49,7 +49,7 @@
       "productName": "ONEPLUS 10 PRO",
       "productCategory": "Mobile Phones",
       "productImage": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/OnePlus_10_Ultra_Untitled.png",
-      "productPrice": "60,999/-",
+      "productPrice": "60999",
       "productDetails": "ONEPLUS 10 PRO OFFERS A BIGGER BATTERY WITH QUICKER CHARGING, A SLIGHTLY MORE POWER-EFFICIENT AMOLED DISPLAY, A MORE POWERFUL SoC WITH PLENTY MORE 5G BANDS, A BETTER SELFIE CAMERA, A NICER DESIGN.",
       "id": 5
     }
@@ -87,48 +87,6 @@
       "tel": "23423423423423",
       "totalPrice": 300,
       "id": 5
-    },
-    {
-      "email": "vinaychoudhary994@gmail.com",
-      "address": "123-ABCasd",
-      "tel": "23423423423423",
-      "totalPrice": 300,
-      "id": 6
-    },
-    {
-      "email": "vinaychoud994@gmail.com",
-      "address": "123-ABCsdasdasd",
-      "tel": "9413221527",
-      "totalPrice": 300,
-      "id": 7
-    },
-    {
-      "email": "vinaychoudharyasdasd994@gmail.com",
-      "address": "123-ABC, asdasdasdsdaasd",
-      "tel": "2131312312312323423",
-      "totalPrice": 300,
-      "id": 8
-    },
-    {
-      "email": "vinaychoudhasdary994@gmail.com",
-      "address": "123-ABCasdasasdasd",
-      "tel": "sad21e1",
-      "totalPrice": 300,
-      "id": 9
-    },
-    {
-      "email": "vinaychasdasoudhary994@gmail.com",
-      "address": "123-ABCdddasdasdasd",
-      "tel": "2131312312312323423",
-      "totalPrice": 300,
-      "id": 10
-    },
-    {
-      "email": "vinaychoudhary994@gmail.com",
-      "address": "123-ABC",
-      "tel": "9413221527",
-      "totalPrice": 300,
-      "id": 11
     }
   ]
 }

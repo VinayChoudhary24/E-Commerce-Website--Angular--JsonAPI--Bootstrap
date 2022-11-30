@@ -10,6 +10,9 @@ import { ProductService } from '../seller-services/product.service';
 })
 export class CartPageComponent implements OnInit {
 
+  // To Show Empty Cart Message
+  emptyCart = '';
+
   // to Store the Final Cart Data
   cartData: cart[] | undefined;
 
@@ -28,8 +31,12 @@ export class CartPageComponent implements OnInit {
               private router: Router ) {}
 
   ngOnInit(): void {
-     // calling the Service API
-     this.productService.currentCart().subscribe( (resdata) => {
+     this.updateCartDataAfterRemoveItem();
+  }
+
+  updateCartDataAfterRemoveItem() {
+    // calling the Service API
+    this.productService.currentCart().subscribe( (resdata) => {
       // console.log(resdata, "product added in Cart Page");
       this.cartData = resdata;
       let price = 0;
@@ -45,7 +52,10 @@ export class CartPageComponent implements OnInit {
       this.priceSummary.tax = price/10;
       this.priceSummary.delivery = 100;
       this.priceSummary.total = price + (price/10) + 100 - (price/10);
-      console.log(this.priceSummary);
+      // console.log(this.priceSummary);
+      if(!this.cartData.length) {
+        this.emptyCart = "Your Cart is Empty..."
+      }
      })
   }
 
@@ -54,4 +64,10 @@ export class CartPageComponent implements OnInit {
     this.router.navigate(['/app-checkout']);
   }
 
+  // This will remove a item from Cart
+  onRemoveItem(cartId: number | undefined) {
+    cartId && this.cartData && this.productService.removeToCart(cartId).subscribe( (resdata) => {
+      this.updateCartDataAfterRemoveItem();
+    })
+  }
 }

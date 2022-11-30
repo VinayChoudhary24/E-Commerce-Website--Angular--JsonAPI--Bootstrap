@@ -5,6 +5,8 @@
     <!-- This Contains the Items List -->
     <div class="row">
         <div class="col-sm-8 details">
+            <h2>{{ emptyCart }}</h2>
+
             <!-- Apply for Loop for the Rest of the Products -->
             <ul *ngFor="let cart of cartData">
                 <li>
@@ -23,7 +25,7 @@
                     <span>{{ cart.quantity }}</span>
                 </li>
                 <li>
-                    <button>Remove item</button>
+                    <button (click)="onRemoveItem(cart.id)">Remove item</button>
                 </li>
             </ul>
         </div>

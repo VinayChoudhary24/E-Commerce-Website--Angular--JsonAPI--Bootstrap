@@ -7,6 +7,7 @@
 
     <!-- Middle Part of the Header -- Search Input and Button -->
     <!-- Use *ngIf to show the search Bar when in userMode and defaultMode, but Hide the Search Bar when in Seller-home page -->
+    <!-- *ngIf="switchMode !== 'seller' " -->
     <div *ngIf="switchMode === 'user' || 'defualt'" class="nav__search">
         <input
         #searchInput
