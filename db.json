@@ -70,9 +70,26 @@
       "email": "test2@test.com",
       "password": "123456",
       "id": 3
+    },
+    {
+      "email": "Vinay@vinay.com",
+      "password": "123456",
+      "id": 4
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "productName": "IPHONE 14 PRO ",
+      "productCategory": "Mobile Phones",
+      "productImage": "https://9to5mac.com/wp-content/uploads/sites/6/2022/09/iPhone-14-wallpapers.jpg?quality=82&strip=all",
+      "productPrice": "129900",
+      "productDetails": "THE IPHONE 14 PRO INTRODUCES A NEW DYNAMIC ISLAND AREA INSTEAD OF A NOTCH< AN UPGRADED 48-MEGAPIXEL PRIMARY CAMERA, AND AN ALWAYS-ON DISPLAY.",
+      "quantity": 1,
+      "userId": 4,
+      "productId": 3,
+      "id": 1
+    }
+  ],
   "orders": [
     {
       "email": "vinaychoudhary994@gmail.com",
